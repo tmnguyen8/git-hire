@@ -8,5 +8,24 @@ export default {
       title: title,
       location: location 
     } });
-  }
+  },
+  getIndeedJobs: function(title, location) {
+    return axios.get("/api/indeed", { params: { 
+      title: title,
+      location: location 
+    } });
+  },
+  getZiprecruiterJobs: function(title, location) {
+    return axios.get("/api/ziprecruiter", { params: { 
+      title: title,
+      location: location 
+    } });
+  },
+  getMonsterJobs: function(title, location) {
+    return axios.get("/api/monster", { params: { 
+      title: title,
+      location: location 
+    } });
+  },
+
 };

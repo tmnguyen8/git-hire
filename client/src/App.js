@@ -23,10 +23,43 @@ class App extends Component {
     });
   };
 
-  handleFormSubmit = event => {
+  handleGithubSubmit = event => {
     // When the form is submitted, prevent its default behavior, get recipes update the recipes state
     event.preventDefault();
     API.getGithubJobs(this.state.jobTitle, this.state.jobLocation)
+      .then(res => {
+        this.setState({ jobs: res.data })
+        console.log(this.state.jobs)
+      })
+      .catch(err => console.log(err));
+  };
+
+  handleIndeedSubmit = event => {
+    // When the form is submitted, prevent its default behavior, get recipes update the recipes state
+    event.preventDefault();
+    API.getIndeedJobs(this.state.jobTitle, this.state.jobLocation)
+      .then(res => {
+        this.setState({ jobs: res.data })
+        console.log(this.state.jobs)
+      })
+      .catch(err => console.log(err));
+  };
+
+  handleZiprecruiterSubmit = event => {
+    // When the form is submitted, prevent its default behavior, get recipes update the recipes state
+    event.preventDefault();
+    API.getZiprecruiterJobs(this.state.jobTitle, this.state.jobLocation)
+      .then(res => {
+        this.setState({ jobs: res.data })
+        console.log(this.state.jobs)
+      })
+      .catch(err => console.log(err));
+  };
+
+  handleMonsterSubmit = event => {
+    // When the form is submitted, prevent its default behavior, get recipes update the recipes state
+    event.preventDefault();
+    API.getMonsterJobs(this.state.jobTitle, this.state.jobLocation)
       .then(res => {
         this.setState({ jobs: res.data })
         console.log(this.state.jobs)
@@ -60,12 +93,37 @@ class App extends Component {
                       />
                     </Col>
                     <Col size="xs-3 sm-2">
+                      {/* Search in Github */}
                       <Button
-                        onClick={this.handleFormSubmit}
+                        onClick={this.handleGithubSubmit}
                         type="success"
                         className="input-lg"
                       >
-                        Search
+                        Search Github
+                      </Button>
+                      {/* Search in Indeed */}
+                      <Button
+                        onClick={this.handleIndeedSubmit}
+                        type="success"
+                        className="input-lg"
+                      >
+                        Search Indeed
+                      </Button>
+                      {/* Search in ZipRecruiter */}
+                      <Button
+                        onClick={this.handleZiprecruiterSubmit}
+                        type="success"
+                        className="input-lg"
+                      >
+                        Search Zip Recruiter
+                      </Button>
+                      {/* Search in Monster */}
+                      <Button
+                        onClick={this.handleMonsterSubmit}
+                        type="success"
+                        className="input-lg"
+                      >
+                        Search Monster
                       </Button>
                     </Col>
                   </Row>
