@@ -13,14 +13,14 @@ router.get("/monster", (req, res) => {
       $("#SearchResults").each(()=>{
         var result = {}
         
-        result.title = $(this)
-          .children(".card-content")
-          .children(".flex-row")
-          .children(".summary")
-          .children(".card-header")
-          .children("h2")
-          .children("a")
-          .text()
+        // result.id = $(this);
+        // result.title = $(this);
+        // result.company = $(this);
+        // result.url = $(this);
+        // result.location = $(this);
+        // result.description = $(this);
+        // result.salary = $(this);
+        // result.imageURL = $(this);
 
         scrapeData.push(result)
       })

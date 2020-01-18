@@ -30,6 +30,8 @@ router.get("/usajobs", (req, res) => {
                 result.url = item.MatchedObjectDescriptor.PositionURI;
                 result.location = item.MatchedObjectDescriptor.PositionLocationDisplay;
                 result.description = item.MatchedObjectDescriptor.QualificationSummary;
+                result.salary = "";
+                result.imageURL = "";
 
                 resultData.push(result)
         })
