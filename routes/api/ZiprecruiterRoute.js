@@ -10,7 +10,7 @@ router.get("/ziprecruiter", (req, res) => {
       var $ = cheerio.load(response.data);
       var scrapeData = [];
 
-      $("li").each(()=>{
+      $("div").each(()=>{
         var result = {}
         
         // result.id = $(this);
