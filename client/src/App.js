@@ -158,6 +158,15 @@ class App extends Component {
                       >
                         Search USA Jobs
                       </Button>
+
+                      {/* Search in Glassdoor */}
+                      <Button
+                        onClick={this.handleGlassdoorSubmit}
+                        type="success"
+                        className="input-lg"
+                      >
+                        Search Glassdoor
+                      </Button>
                     </Col>
                   </Row>
                 </Container>

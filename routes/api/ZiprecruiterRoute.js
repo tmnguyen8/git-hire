@@ -10,15 +10,17 @@ router.get("/ziprecruiter", (req, res) => {
       var $ = cheerio.load(response.data);
       var scrapeData = [];
 
-      $("article").each(()=>{
+      $("li").each(()=>{
         var result = {}
         
-        result.title = $(this)
-          .children(".job_content")
-          .children("a")
-          .children("h2")
-          .children("span")
-          .text()
+        // result.id = $(this);
+        // result.title = $(this);
+        // result.company = $(this);
+        // result.url = $(this);
+        // result.location = $(this);
+        // result.description = $(this);
+        // result.salary = $(this);
+        // result.imageURL = $(this);
 
         scrapeData.push(result)
       })
