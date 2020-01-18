@@ -10,11 +10,11 @@ router.get("/indeed", (req, res) => {
       var $ = cheerio.load(response.data);
       var scrapeData = [];
 
-      $(".jobsearch-SerpJobCard").each(()=>{
+      $(".jobsearch-SerpJobCard").each(function() {
         var result = {}
-        
+   
         // result.id = $(this);
-        // result.title = $(this);
+        result.title = $(this).children(".title").children('a').attr('title');
         // result.company = $(this);
         // result.url = $(this);
         // result.location = $(this);
@@ -23,11 +23,12 @@ router.get("/indeed", (req, res) => {
         // result.imageURL = $(this);
 
         scrapeData.push(result)
+        console.log(result.title)
       })
-      console.log(scrapeData)
+      // console.log(scrapeData)
       res.json(scrapeData)
     })
-    .catch(err => res.status(422).json(err));
+    .catch(err => res.json(err));
 });
 
 module.exports = router;

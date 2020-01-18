@@ -84,7 +84,7 @@ class App extends Component {
     event.preventDefault();
     API.getGlassdoorJobs(this.state.jobTitle, this.state.jobLocation)
       .then(res => {
-        // console.log("response data",res)
+        console.log("response data",res.data)
         this.setState({ jobs: res.data })
         // console.log(this.state.jobs)
       })
