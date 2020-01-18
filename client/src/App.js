@@ -82,7 +82,8 @@ class App extends Component {
   handleGlassdoorSubmit = event => {
     // When the form is submitted, prevent its default behavior, get recipes update the recipes state
     event.preventDefault();
-    API.getGlassdoorJobs(this.state.jobTitle, this.state.jobLocation)
+    console.log(this.state.jobTitle)
+    API.getGlassdoorJobs(this.state.jobTitle)
       .then(res => {
         console.log("response data",res.data)
         this.setState({ jobs: res.data })

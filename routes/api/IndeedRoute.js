@@ -14,7 +14,9 @@ router.get("/indeed", (req, res) => {
         var result = {}
    
         // result.id = $(this);
+
         result.title = $(this).children(".title").children('a').attr('title');
+
         // result.company = $(this);
         // result.url = $(this);
         // result.location = $(this);
