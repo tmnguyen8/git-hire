@@ -32,6 +32,12 @@ export default {
       title: title,
       location: location 
     } });
+  },
+  getGlassdoorJobs: function(title, location) {
+    return axios.get("/api/glassdoor", { params: { 
+      title: title,
+      location: location 
+    } });
   }
 
 };
