@@ -13,9 +13,14 @@ router.get("/indeed", (req, res) => {
       $(".jobsearch-SerpJobCard").each(()=>{
         var result = {}
         
-        result.title = $(this)
-          .children("div")
-          .children("a")
+        // result.id = $(this);
+        // result.title = $(this);
+        // result.company = $(this);
+        // result.url = $(this);
+        // result.location = $(this);
+        // result.description = $(this);
+        // result.salary = $(this);
+        // result.imageURL = $(this);
 
         scrapeData.push(result)
       })
