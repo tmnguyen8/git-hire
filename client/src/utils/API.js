@@ -27,5 +27,11 @@ export default {
       location: location 
     } });
   },
+  getUSAJobs: function(title, location) {
+    return axios.get("/api/usajobs", { params: { 
+      title: title,
+      location: location 
+    } });
+  }
 
 };
