@@ -67,6 +67,18 @@ class App extends Component {
       .catch(err => console.log(err));
   };
 
+  handleUSAJobsSubmit = event => {
+    // When the form is submitted, prevent its default behavior, get recipes update the recipes state
+    event.preventDefault();
+    API.getUSAJobs(this.state.jobTitle, this.state.jobLocation)
+      .then(res => {
+        // console.log("response data",res)
+        this.setState({ jobs: res.data })
+        // console.log(this.state.jobs)
+      })
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
       <div>
@@ -124,6 +136,15 @@ class App extends Component {
                         className="input-lg"
                       >
                         Search Monster
+                      </Button>
+
+                      {/* Search in USAJobs */}
+                      <Button
+                        onClick={this.handleUSAJobsSubmit}
+                        type="success"
+                        className="input-lg"
+                      >
+                        Search USA Jobs
                       </Button>
                     </Col>
                   </Row>
