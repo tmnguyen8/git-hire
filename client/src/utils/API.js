@@ -35,8 +35,7 @@ export default {
   },
   getGlassdoorJobs: function(title, location) {
     return axios.get("/api/glassdoor", { params: { 
-      title: title,
-      location: location 
+      title: title 
     } });
   }
 
