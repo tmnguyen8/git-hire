@@ -85,7 +85,7 @@ class App extends Component {
     console.log(this.state.jobTitle)
     API.getGlassdoorJobs(this.state.jobTitle)
       .then(res => {
-        // console.log("response data",res)
+        console.log("response data",res.data)
         this.setState({ jobs: res.data })
         // console.log(this.state.jobs)
       })
