@@ -27,14 +27,17 @@ router.get("/ziprecruiter", (req, res) => {
         var result = {}
         
         // result.id = $(this);
-        result.title = $(this)
-        .find('h2')
-        .text();
-        console.log(result.title)
+        // result.title = $(this)
+        // .find('h2')
+        // .text();
+        // console.log(result.title)
         // result.company = $(this);
         // result.url = $(this);
         // result.location = $(this);
-        // result.description = $(this);
+        result.description = $(this)
+        .children('a')
+        .children('p')
+        .text();
         // result.salary = $(this);
         // result.imageURL = $(this);
 
@@ -43,7 +46,7 @@ router.get("/ziprecruiter", (req, res) => {
       // console.log(scrapeData)
       res.json(scrapeData)
     })
-    .catch(err => res.status(422).json(err));
+    .catch(err => {res.status(422).json(err)});
 });
 
 module.exports = router;
