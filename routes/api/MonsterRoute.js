@@ -8,6 +8,8 @@ router.get("/monster", (req, res) => {
     .then((response) => {
       var $ = cheerio.load(response.data);
       var scrapeData = [];
+      console.log($);
+      
       $(".card-content").each(function(){
         var result = {}
         result.id = $(this).data('jobid');
