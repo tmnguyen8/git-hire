@@ -10,24 +10,28 @@ router.get("/ziprecruiter", (req, res) => {
       var $ = cheerio.load(response.data);
       var scrapeData = [];
 
-      $("li").each(()=>{
+      $(".job_content").each( function() {
         var result = {}
         
         // result.id = $(this);
-        // result.title = $(this);
+        result.title = $(this)
+        .children('a')
+        .children('h2')
+        .children('span')
+        .text();
         // result.company = $(this);
         // result.url = $(this);
         // result.location = $(this);
         // result.description = $(this);
         // result.salary = $(this);
         // result.imageURL = $(this);
-
+        console.log(result.title)
         scrapeData.push(result)
       })
       // console.log(scrapeData)
       res.json(scrapeData)
     })
-    .catch(err => res.status(422).json(err));
+    .catch(err => res.json(err));
 });
 
 module.exports = router;

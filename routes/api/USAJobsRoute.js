@@ -1,10 +1,11 @@
 const axios = require("axios");
 const router = require("express").Router();
-require("dotenv");
+require("dotenv").config();
 
 var host = 'data.usajobs.gov';  
-var userAgent = 'tmnguyen8@gmail.com';  
-var authKey = 'uyWJI+jIRS4qNiG/VuhUyIFK3brITqFqgmRAS3XmQDg='; 
+var userAgent = process.env.USA_Email;  
+var authKey = process.env.USAJOB_Key; 
+
 
 router.get("/usajobs", (req, res) => {
   // console.log(req.query)

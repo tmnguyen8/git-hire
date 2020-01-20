@@ -52,6 +52,7 @@ class App extends Component {
       .then(res => {
         this.setState({ jobs: res.data })
         console.log(this.state.jobs)
+        console.log("response data", res.data)
       })
       .catch(err => console.log(err));
   };
@@ -135,7 +136,7 @@ class App extends Component {
                         Search Indeed
                       </Button>
                       {/* Search in ZipRecruiter */}
-                      <Button
+                      <Button 
                         onClick={this.handleZiprecruiterSubmit}
                         type="success"
                         className="input-lg"
