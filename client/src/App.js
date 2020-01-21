@@ -4,7 +4,7 @@ import Nav from "./components/Nav";
 import Input from "./components/Input";
 import Button from "./components/Button";
 import API from "./utils/API";
-import { RecipeList, RecipeListItem } from "./components/RecipeList";
+import { JobList, JobListItem } from "./components/JobList";
 import { Container, Row, Col } from "./components/Grid";
 
 class App extends Component {
@@ -193,19 +193,21 @@ class App extends Component {
               {!this.state.jobs.length ? (
                 <h1 className="text-center">No Jobs to Display</h1>
               ) : (
-                <RecipeList>
+                <JobList>
                   {this.state.jobs.map(job => {
                     return (
-                      <RecipeListItem
+                      <JobListItem
                         key={job.id}
                         title={job.title}
                         href={job.url}
                         description={job.description}
                         thumbnail={job.company_logo}
+                        location={job.location}
+                        salary={job.salary}
                       />
                     );
                   })}
-                </RecipeList>
+                </JobList>
               )}
             </Col>
           </Row>
