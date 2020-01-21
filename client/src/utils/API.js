@@ -15,8 +15,8 @@ export default {
       location: location 
     } });
   },
-  getZiprecruiterJobs: function(title, location) {
-    return axios.get("/api/ziprecruiter", { params: { 
+  getSimplyhiredJobs: function(title, location) {
+    return axios.get("/api/simplyhired", { params: { 
       title: title,
       location: location 
     } });

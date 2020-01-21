@@ -79,12 +79,25 @@ class App extends Component {
       })
       .catch(err => console.log(err));
   };
-
+  
   handleGlassdoorSubmit = event => {
     // When the form is submitted, prevent its default behavior, get recipes update the recipes state
     event.preventDefault();
     console.log(this.state.jobTitle)
     API.getGlassdoorJobs(this.state.jobTitle)
+      .then(res => {
+        console.log("response data",res.data)
+        this.setState({ jobs: res.data })
+        // console.log(this.state.jobs)
+      })
+      .catch(err => console.log(err));
+  };
+  
+  // When the form is submitted, prevent its default behavior, get recipes update the recipes state
+  handleSimplyhiredSubmit = event => {
+    event.preventDefault();
+    console.log(this.state.jobTitle)
+    API.getSimplyhiredJobs(this.state.jobTitle, this.state.jobLocation)
       .then(res => {
         console.log("response data",res.data)
         this.setState({ jobs: res.data })
@@ -127,6 +140,14 @@ class App extends Component {
                       >
                         Search Github
                       </Button>
+                      {/* Search in SimplyHired */}
+                      <Button
+                        onClick={this.handleSimplyhiredSubmit}
+                        type="success"
+                        className="input-lg"
+                      >
+                        Search SimplyHired
+                      </Button>
                       {/* Search in Indeed */}
                       <Button
                         onClick={this.handleIndeedSubmit}
@@ -134,14 +155,6 @@ class App extends Component {
                         className="input-lg"
                       >
                         Search Indeed
-                      </Button>
-                      {/* Search in ZipRecruiter */}
-                      <Button 
-                        onClick={this.handleZiprecruiterSubmit}
-                        type="success"
-                        className="input-lg"
-                      >
-                        Search Zip Recruiter
                       </Button>
                       {/* Search in Monster */}
                       <Button
