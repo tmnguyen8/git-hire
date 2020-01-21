@@ -187,6 +187,7 @@ class App extends Component {
                         key={job.id}
                         title={job.title}
                         href={job.url}
+                        company={job.company}
                         description={job.description}
                         thumbnail={job.company_logo}
                         location={job.location}

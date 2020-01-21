@@ -13,6 +13,7 @@ export function JobList({ children }) {
 export function JobListItem({
   thumbnail = "https://placehold.it/300x300",
   title,
+  company,
   location, 
   description,
   salary,
@@ -27,6 +28,7 @@ export function JobListItem({
           </Col>
           <Col size="xs-8 sm-9">
             <h3>{title}</h3>
+            <div>Company: {company}</div>
             <div>Location: {location}</div>
             <div>Description: {description}</div>
             <div>Salary: {salary}</div>
