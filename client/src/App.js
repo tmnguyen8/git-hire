@@ -45,18 +45,6 @@ class App extends Component {
       .catch(err => console.log(err));
   };
 
-  handleZiprecruiterSubmit = event => {
-    // When the form is submitted, prevent its default behavior, get recipes update the recipes state
-    event.preventDefault();
-    API.getZiprecruiterJobs(this.state.jobTitle, this.state.jobLocation)
-      .then(res => {
-        this.setState({ jobs: res.data })
-        console.log(this.state.jobs)
-        console.log("response data", res.data)
-      })
-      .catch(err => console.log(err));
-  };
-
   handleMonsterSubmit = event => {
     // When the form is submitted, prevent its default behavior, get recipes update the recipes state
     event.preventDefault();
