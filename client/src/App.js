@@ -158,6 +158,7 @@ class App extends Component {
                       </Button>
                       {/* Search in Monster */}
                       <Button
+                        src="./images/monsterlogo.png" 
                         onClick={this.handleMonsterSubmit}
                         type="success"
                         className="input-lg"
