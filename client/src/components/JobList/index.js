@@ -30,7 +30,7 @@ export function JobListItem({
             <h3>{title}</h3>
             <div>Company: {company}</div>
             <div>Location: {location}</div>
-           <div> {description? `Description: ${description}`: null} </div>
+            <div> {description? `Description: ${description}`: null} </div>
             <div>Salary: {salary}</div>
             <a rel="noreferrer noopener" target="_blank" href={href}>
               Go to job!
