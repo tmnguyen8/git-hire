@@ -5,11 +5,9 @@ import Nav from "./components/Nav";
 // import Input from "./components/Input";
 // import Button from "./components/Button";
 import API from "./utils/API";
-// import { JobList, JobListItem } from "./components/JobList";
-// import { Container, Row, Col } from "./components/Grid";
-import Home from "./Pages/Home";
-import Login from "./Pages/Login";
-import { Box } from "@material-ui/core";
+import { JobList, JobListItem } from "./components/JobList";
+import { Container, Row, Col } from "./components/Grid";
+import Checkbox from "./components/Checkbox"; 
 
 class App extends Component {
   // state = {
@@ -108,23 +106,111 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Router>
-          <>
-            <Nav user={this.state.user} />
-            <Box pt={3}>
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route
-                  exact
-                  path="/login"
-                  render={() => (
-                    <Login handleGlobalState={this.handleGlobalState} />
-                  )}
-                />
-              </Switch>
-            </Box>
-          </>
-        </Router>
+        <Nav />
+        <Checkbox/>        
+        <Jumbotron />
+        <Container>
+          <Row>
+            <Col size="md-12">
+              <form>
+                <Container>
+                  <Row>
+                    <Col size="xs-9 sm-10">
+                      <Input
+                        name="jobTitle"
+                        value={this.state.jobTitle}
+                        onChange={this.handleInputChange}
+                        placeholder="Job Title"
+                      />
+                      <Input
+                        name="jobLocation"
+                        value={this.state.jobLocation}
+                        onChange={this.handleInputChange}
+                        placeholder="Location"
+                      />
+                    </Col>
+                    <Col size="xs-3 sm-2">
+                      {/* Search in Github */}
+                      <Button
+                        onClick={this.handleGithubSubmit}
+                        type="success"
+                        className="input-lg"
+                      >
+                        Search Github
+                      </Button>
+                      {/* Search in SimplyHired */}
+                      <Button
+                        onClick={this.handleSimplyhiredSubmit}
+                        type="success"
+                        className="input-lg"
+                      >
+                        Search SimplyHired
+                      </Button>
+                      {/* Search in Indeed */}
+                      <Button
+                        onClick={this.handleIndeedSubmit}
+                        type="success"
+                        className="input-lg"
+                      >
+                        Search Indeed
+                      </Button>
+                      {/* Search in Monster */}
+                      <Button
+                        onClick={this.handleMonsterSubmit}
+                        type="success"
+                        className="input-lg"
+                      >
+                        Search Monster
+                      </Button>
+
+                      {/* Search in USAJobs */}
+                      <Button
+                        onClick={this.handleUSAJobsSubmit}
+                        type="success"
+                        className="input-lg"
+                      >
+                        Search USA Jobs
+                      </Button>
+
+                      {/* Search in Glassdoor */}
+                      <Button
+                        onClick={this.handleGlassdoorSubmit}
+                        type="success"
+                        className="input-lg"
+                      >
+                        Search Glassdoor
+                      </Button>
+                    </Col>
+                  </Row>
+                </Container>
+              </form>
+            </Col>
+          </Row>
+          <Row>
+            <Col size="xs-12">
+              {!this.state.jobs.length ? (
+                <h1 className="text-center">No Jobs to Display</h1>
+              ) : (
+                <JobList>
+                  {this.state.jobs.map(job => {
+                    return (
+                      <JobListItem
+                        key={job.id}
+                        title={job.title}
+                        href={job.url}
+                        company={job.company}
+                        description={job.description}
+                        thumbnail={job.company_logo}
+                        location={job.location}
+                        salary={job.salary}
+                      />
+                    );
+                  })}
+                </JobList>
+              )}
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }
