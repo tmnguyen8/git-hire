@@ -6,7 +6,6 @@ import Button from "./components/Button";
 import API from "./utils/API";
 import { JobList, JobListItem } from "./components/JobList";
 import { Container, Row, Col } from "./components/Grid";
-import Checkbox from "./components/Checkbox"; 
 
 class App extends Component {
   state = {
@@ -111,7 +110,6 @@ class App extends Component {
     return (
       <div>
         <Nav />
-        <Checkbox/>        
         <Jumbotron />
         <Container>
           <Row>
@@ -160,6 +158,7 @@ class App extends Component {
                       </Button>
                       {/* Search in Monster */}
                       <Button
+                        src="./images/monsterlogo.png" 
                         onClick={this.handleMonsterSubmit}
                         type="success"
                         className="input-lg"

@@ -31,7 +31,7 @@ export function JobListItem({
             <div>Company: {company}</div>
             <div>Location: {location}</div>
             <div> {description? `Description: ${description}`: null} </div>
-            <div>Salary: {salary}</div>
+            <div> {salary? `Salary: ${salary}`: null} </div>
             <a rel="noreferrer noopener" target="_blank" href={href}>
               Go to job!
             </a>
