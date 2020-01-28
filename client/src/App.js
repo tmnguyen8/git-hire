@@ -17,7 +17,6 @@ class App extends React.Component {
       console.log(res.data)
     })
     
-    this.setState({ user: "Ben" });
   };
   state = {
     user: false,

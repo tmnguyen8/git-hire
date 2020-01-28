@@ -7,7 +7,11 @@ class User extends React.Component {
   render() {
     const global = this.context;
     console.log(global);
-    return <h1>User Page: {global.user}</h1>;
+    return (
+      <div>
+        <h1>User Page: {global.user.displayName}</h1>
+      </div>
+    );
   }
 }
 
