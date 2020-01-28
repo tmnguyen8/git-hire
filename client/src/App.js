@@ -7,13 +7,15 @@ import {
 } from "react-router-dom";
 import Home from "./pages/Home";
 import User from "./pages/User";
-import GlobalContext from "./Context/globalContext";
+import GlobalContext from "./context/globalContext";
 import Auth from "./utils/Auth";
 
 class App extends React.Component {
   handleLogin = () => {
     console.log("user:", this.state.user)
-    Auth.getFacebookAuth()
+    Auth.getFacebookAuth().then((res)=>{
+      console.log(res.data)
+    })
     
     this.setState({ user: "Ben" });
   };
@@ -38,6 +40,7 @@ class App extends React.Component {
 export default App;
 
 function ProtectedRoute({ component: Component, ...rest }) {
+  console.log()
   return (
     <GlobalContext.Consumer>
       {({ user }) => (

@@ -64,7 +64,7 @@ app.get(
   passport.authenticate("facebook"),
   (req, res) => {
     console.log('user after callback', user);
-    res.send(user)
+    res.redirect("/auth/profile")
   }
 );
 
