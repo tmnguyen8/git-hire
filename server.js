@@ -19,6 +19,9 @@ app.use(cors());
 // Use apiRoutes
 app.use(routes);
 
+// Connect to the Mongo DB
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/userDB");
+
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function(req, res) {
