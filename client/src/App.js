@@ -23,6 +23,16 @@
 //   handleGlobalState = (key, value) => {
 //     this.setState({ [key]: value });
 // -----------------PAT-----------------
+// -----------------PAT-----------------
+//       <div>
+//         <nav>
+//           <Router>
+//             <Route exact path="/" component= {Home} ></Route>
+//             {/* <Route exact path="/login" component = {Login} ></Route> */}
+//           </Router>
+//             </nav>
+//       </div>
+// -----------------PAT-----------------
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -32,7 +42,7 @@ import {
 } from "react-router-dom";
 import Home from "./pages/Home";
 import User from "./pages/User";
-import GlobalContext from "./context/globalContext";
+import GlobalContext from "./Context/globalContext";
 import Auth from "./utils/Auth";
 
 class App extends React.Component {
@@ -49,16 +59,7 @@ class App extends React.Component {
   };
   render() {
     return (
-// -----------------PAT-----------------
-//       <div>
-//         <nav>
-//           <Router>
-//             <Route exact path="/" component= {Home} ></Route>
-//             {/* <Route exact path="/login" component = {Login} ></Route> */}
-//           </Router>
-//             </nav>
-//       </div>
-// -----------------PAT-----------------
+
       <Router>
         <GlobalContext.Provider value={this.state}>
           <Switch>
