@@ -111,7 +111,7 @@ class App extends Component {
     return (
       <div>
         <Nav />
-        <Checkbox/>        
+        <Checkbox/>       
         <Jumbotron />
         <Container>
           <Row>
@@ -160,6 +160,7 @@ class App extends Component {
                       </Button>
                       {/* Search in Monster */}
                       <Button
+                        src="./images/monsterlogo.png" 
                         onClick={this.handleMonsterSubmit}
                         type="success"
                         className="input-lg"
