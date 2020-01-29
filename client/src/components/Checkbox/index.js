@@ -27,17 +27,27 @@ export default function CheckboxesGroup() {
     Glassdoor: false
   });
 
+
+  console.log("State is GitHub: " + state.GitHub)
+  console.log("State is SimplyHired" + state.SimplyHired)
+  console.log("State is Indeed" + state.Indeed)
+  console.log("State is Monster" + state.Monster)
+  console.log("State is USAjobs" + state.USAjobs)
+  console.log("State is Glassdoor" + state.Glassdoor)
+  
+  
   const handleChange = name => event => {
     setState({ ...state, [name]: event.target.checked });
   };
 
   const { GitHub, SimplyHired, Indeed, Monster, USAjobs, Glassdoor} = state;
-  const error = [GitHub, SimplyHired, Indeed, Monster, USAjobs, Glassdoor].filter(v => v).length !== 2;
+  const error = [GitHub, SimplyHired, Indeed, Monster, USAjobs, Glassdoor].filter(v => v).length !== 7;
 
+  
   return (
     <div className={classes.root}>
       <FormControl component="fieldset" className={classes.formControl}>
-        <FormLabel component="legend">Assign responsibility</FormLabel>
+        <FormLabel component="legend">Job Search Engines</FormLabel>
         <FormGroup>
           <FormControlLabel
             control={<Checkbox checked={GitHub} onChange={handleChange('GitHub')} value="GitHub" />}
@@ -69,40 +79,6 @@ export default function CheckboxesGroup() {
           />
         </FormGroup>
         <FormHelperText>Select Job Outlet</FormHelperText>
-      </FormControl>
-      <FormControl required error={error} component="fieldset" className={classes.formControl}>
-        <FormLabel component="legend">Pick two</FormLabel>
-        <FormGroup>
-          <FormControlLabel
-            control={<Checkbox checked={GitHub} onChange={handleChange('GitHub')} value="GitHub" />}
-            label="GitHub"
-          />
-          <FormControlLabel
-            control={<Checkbox checked={SimplyHired} onChange={handleChange('SimplyHired')} value="SimplyHired" />}
-            label="SimplyHired"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox checked={Indeed} onChange={handleChange('Indeed')} value="Indeed" />}
-            label="Indeed"
-          />
-           <FormControlLabel
-            control={
-              <Checkbox checked={Monster} onChange={handleChange('Monster')} value="Monster" />}
-            label="Monster"
-          />
-           <FormControlLabel
-            control={
-              <Checkbox checked={USAjobs} onChange={handleChange('USAjobs')} value="USAjobs" />}
-            label="USAjobs"
-          />
-             <FormControlLabel
-            control={
-              <Checkbox checked={Glassdoor} onChange={handleChange('Glassdoor')} value="Glassdoor" />}
-            label="Glassdoor"
-          />
-        </FormGroup>
-        <FormHelperText>You can display an error</FormHelperText>
       </FormControl>
     </div>
   );
