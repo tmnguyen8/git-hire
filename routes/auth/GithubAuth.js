@@ -10,19 +10,18 @@ const app = express();
 require("dotenv").config();
 
 const passport = require("passport");
-const FacebookStrategy = require("passport-facebook").Strategy;
+const GithubStrategy = require("passport-github").Strategy;
 const chalk = require("chalk");
 
 var user = {};
 
 // Facebook Strategy
 passport.use(
-  new FacebookStrategy(
+  new GithubStrategy(
     {
-      clientID: process.env.FACEBOOK_CLIENT_ID,
-      clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
-      callbackURL: "/auth/facebook/callback",
-      profileFields: ['id', 'displayName', 'photos', 'email']
+      clientID: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
+      callbackURL: "/auth/github/callback"
     },
     (accessToken, refreshToken, profile, cb) => {
       console.log(chalk.blue(JSON.stringify(profile)));
@@ -51,13 +50,13 @@ app.use(require('cookie-parser')());
 app.use(require('body-parser').urlencoded({ extended: true }));
 app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
 
-app.get("/facebook", 
-    passport.authenticate("facebook")
+app.get("/github", 
+    passport.authenticate("github")
 );
 
 app.get(
-  "/facebook/callback",
-  passport.authenticate("facebook"),
+  "/github/callback",
+  passport.authenticate("github"),
   (req, res) => {
     console.log('user after callback', user);
     res.redirect("/")
