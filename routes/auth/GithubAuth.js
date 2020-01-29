@@ -41,6 +41,7 @@ passport.deserializeUser((user, cb) => {
 
 app.use(cors());
 app.use(passport.initialize());
+app.use(passport.session());
 
 
 // Use application-level middleware for common functionality, including
@@ -50,9 +51,11 @@ app.use(require('cookie-parser')());
 app.use(require('body-parser').urlencoded({ extended: true }));
 app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
 
-app.get("/github", 
-    passport.authenticate("github")
-);
+// app.get("/github", 
+//     passport.authenticate("github")
+// );
+
+app.get("/github", passport.authenticate("github"))
 
 app.get(
   "/github/callback",

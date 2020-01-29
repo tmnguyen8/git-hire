@@ -41,34 +41,41 @@ import {
   Redirect
 } from "react-router-dom";
 import Home from "./pages/Home";
-import User from "./pages/User";
+import User from "./pages/Account";
+import Login from "./pages/Login";
 import GlobalContext from "./Context/globalContext";
 import Auth from "./utils/Auth";
+import Nav from "./components/Nav"
 
 class App extends React.Component {
-  handleLogin = () => {
+
+  handleGithubLogin = () => {
     console.log("user:", this.state.user)
-    Auth.getFacebookAuth().then((res)=>{
-      console.log(res.data)
+    Auth.getGithubAuth().then((res)=>{
+      console.log(res)
     })
-    
   };
   state = {
     user: false,
-    login: this.handleLogin
+    getAccount: this.handleGithubLogin
   };
   render() {
     return (
-
-      <Router>
-        <GlobalContext.Provider value={this.state}>
+      <div>
+       
+        <Router>
+        <GlobalContext.Provider value={this.state}> 
+          <Nav />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/profile" component={User} />
+            <Route exact path="/login" component={Login}/>>
+            <Route exact path="/user" component={User} />
             <ProtectedRoute exact path="/safe" component={User} />
           </Switch>
         </GlobalContext.Provider>
       </Router>
+      </div>
+      
 
     );
   }
