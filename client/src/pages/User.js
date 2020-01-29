@@ -1,5 +1,5 @@
 import React from "react";
-import GlobalContext from "../context/globalContext";
+import GlobalContext from "../Context/globalContext";
 import Search from "../components/Search"
 
 class User extends React.Component {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Redirect, NavLink } from 'react-router-dom'
-import GlobalContext from "../context/globalContext";
+import GlobalContext from "../Context/globalContext";
 import Auth from "../utils/Auth";
 
 class Home extends React.Component {
