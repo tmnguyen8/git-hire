@@ -1,6 +1,7 @@
 import React from "react";
 import Thumbnail from "../Thumbnail";
 import { Container, Row, Col } from "../Grid";
+import placeholderImage from "../../images/notfoundlogo.png"
 
 // Exporting both JobList and JobListItem from this file
 
@@ -11,7 +12,7 @@ export function JobList({ children }) {
 
 // JobListItem renders a bootstrap list item containing data from the recipe api call
 export function JobListItem({
-  thumbnail = "https://placehold.it/300x300",
+  thumbnail = placeholderImage,
   title,
   company,
   location, 

@@ -27,6 +27,15 @@ export default function CheckboxesGroup() {
     Glassdoor: false
   });
 
+
+  console.log("State is GitHub: " + state.GitHub)
+  console.log("State is SimplyHired" + state.SimplyHired)
+  console.log("State is Indeed" + state.Indeed)
+  console.log("State is Monster" + state.Monster)
+  console.log("State is USAjobs" + state.USAjobs)
+  console.log("State is Glassdoor" + state.Glassdoor)
+  
+  
   const handleChange = name => event => {
     setState({ ...state, [name]: event.target.checked });
   };
