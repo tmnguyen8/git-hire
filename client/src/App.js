@@ -6,6 +6,7 @@ import Button from "./components/Button";
 import API from "./utils/API";
 import { JobList, JobListItem } from "./components/JobList";
 import { Container, Row, Col } from "./components/Grid";
+import Checkbox from "./components/Checkbox"; 
 
 class App extends Component {
   state = {
@@ -110,6 +111,7 @@ class App extends Component {
     return (
       <div>
         <Nav />
+        <Checkbox/>       
         <Jumbotron />
         <Container>
           <Row>
