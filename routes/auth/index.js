@@ -1,8 +1,8 @@
 const router = require("express").Router();
-const FacebookAuth = require("./FacebookAuth");
+const GithubAuth = require("./GithubAuth");
 
 
-router.use(FacebookAuth);
+router.use(GithubAuth);
 
 
 module.exports = router;
