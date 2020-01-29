@@ -1,20 +1,25 @@
 import React from "react";
+import { Link, Redirect, NavLink } from 'react-router-dom'
+import GlobalContext from "../../Context/globalContext";
 
-export default props => {
-  return (
-    <div>
-      <nav>
-        <button
-          onClick={() =>
-            props.handleGlobalState("user", {
-              name: "Patrick"
-            })
-          }>
-          Login
-        </button>
-        <button>Sign Up</button>
-      </nav>
-      <h1 className="myClass">Test</h1>
-    </div>
-  );
+class Login extends React.Component { 
+  state = {};
+  
+  render() {
+    
+    const global = this.context;
+    return (
+      <div>
+        <nav>
+          <Link  to="/auth/github">
+              <button className="btn btn-secondary">Login using Github</button>
+          </Link>
+          <p>{global.user}</p>
+        </nav>
+      </div>
+    );
+  }
 };
+
+Login.contextType = GlobalContext;
+export default Login;

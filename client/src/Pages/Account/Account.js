@@ -1,8 +1,8 @@
 import React from "react";
-import GlobalContext from "../Context/globalContext";
-import Search from "../components/Search"
+import GlobalContext from "../../Context/globalContext";
+import Search from "../../components/Search"
 
-class User extends React.Component {
+class Account extends React.Component {
   state = {};
   
   render() {
@@ -19,5 +19,5 @@ class User extends React.Component {
   }
 }
 
-User.contextType = GlobalContext;
-export default User;
+Account.contextType = GlobalContext;
+export default Account;
