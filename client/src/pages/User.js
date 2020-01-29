@@ -1,5 +1,6 @@
 import React from "react";
 import GlobalContext from "../context/globalContext";
+import Search from "../components/Search"
 
 class User extends React.Component {
   state = {};
@@ -10,7 +11,10 @@ class User extends React.Component {
     return (
       <div>
         <h1>User Page: {global.user.displayName}</h1>
+        <p>{global.user.displayName}</p>
+        <Search />
       </div>
+      
     );
   }
 }

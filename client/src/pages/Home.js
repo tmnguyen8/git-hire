@@ -30,6 +30,7 @@ class Home extends React.Component {
         
         <a className="btn btn-primary" href="/auth/facebook">Login to Facebook</a>
         <a className="btn btn-primary" href="/auth/logout">Logout of Facebook</a>
+        <a className="btn btn-primary" href="/profile">User Profile</a>
         <p>{this.state.user.id}</p>
         <p>{this.state.user.displayName}</p>
         <img src={this.state.photo.value}/>
