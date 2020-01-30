@@ -40,9 +40,9 @@ import {
   Switch,
   Redirect
 } from "react-router-dom";
-import Home from "./pages/Home";
-import User from "./pages/Account";
-import Login from "./pages/Login";
+import Home from "./Pages/Home";
+import Account from "./Pages/Account";
+import Login from "./Pages/Login";
 import GlobalContext from "./Context/globalContext";
 import Auth from "./utils/Auth";
 import Nav from "./components/Nav"
@@ -52,7 +52,7 @@ class App extends React.Component {
   handleGithubLogin = () => {
     console.log("user:", this.state.user)
     Auth.getGithubAuth().then((res)=>{
-      console.log(res)
+      return res.data
     })
   };
   state = {
@@ -69,8 +69,9 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login}/>>
-            <Route exact path="/user" component={User} />
-            <ProtectedRoute exact path="/safe" component={User} />
+            <Route exact path="/account" component={Account} />
+            <Route exact path="/auth/github" component={Home} />
+            <ProtectedRoute exact path="/safe" component={Account} />
           </Switch>
         </GlobalContext.Provider>
       </Router>

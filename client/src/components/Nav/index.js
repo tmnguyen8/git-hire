@@ -8,13 +8,7 @@ class Nav extends Component {
     state = {
         user: false
     };
-    
-    handleGithubLogin = event =>{
-        Auth.getGithubAuth().then((res)=>{
-            console.log("/auth/profile", res)
-            this.setState({user: res.data})
-        })
-    }
+
     render() {
         const global = this.context;
         
@@ -23,6 +17,7 @@ class Nav extends Component {
                 <Link className="navbar-brand" to="/">
                     <img src="https://raw.githubusercontent.com/tmnguyen8/git-hire/master/client/src/images/job.png" alt="banner" className="brand-logo"></img>
                 </Link>
+                <p>{global.user.id}</p>
                 <p>{this.state.user.id}</p>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
