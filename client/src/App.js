@@ -70,6 +70,7 @@ class App extends React.Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login}/>>
             <Route exact path="/account" component={Account} />
+            <Route exact path="/auth/github" component={Home} />
             <ProtectedRoute exact path="/safe" component={Account} />
           </Switch>
         </GlobalContext.Provider>
