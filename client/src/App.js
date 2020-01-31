@@ -45,27 +45,26 @@ import Account from "./Pages/Account";
 import Login from "./Pages/Login";
 import GlobalContext from "./Context/globalContext";
 import Auth from "./utils/Auth";
-import Nav from "./components/Nav"
+import Nav from "./components/Nav";
 
 class App extends React.Component {
 
   handleGithubLogin = () => {
     console.log("user:", this.state.user)
-    Auth.getGithubAuth().then((res)=>{
+    Auth.loginGithub().then((res)=>{
       return res.data
     })
   };
   state = {
     user: false,
-    getAccount: this.handleGithubLogin
+    handleGithubLogin: this.handleGithubLogin
   };
   render() {
     return (
       <div>
-       
+        
         <Router>
         <GlobalContext.Provider value={this.state}> 
-          <Nav />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login}/>

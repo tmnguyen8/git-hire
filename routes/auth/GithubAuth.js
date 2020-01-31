@@ -62,11 +62,11 @@ app.get(
   passport.authenticate("github"),
   (req, res) => {
     console.log('user after callback', user);
-    res.redirect("/")
+    res.redirect('/login')
   }
 );
 
-app.get("/profile", (req, res) => {
+app.get("/github/profile", (req, res) => {
     console.log('user:', user);
     console.log("getting user data!");
     res.send(user)

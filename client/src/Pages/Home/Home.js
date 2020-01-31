@@ -55,38 +55,30 @@ import React from "react";
 import { Link, Redirect, NavLink } from 'react-router-dom'
 import GlobalContext from "../../Context/globalContext";
 import Auth from "../../utils/Auth";
+import Nav from "../../components/Nav";
 
 class Home extends React.Component {
   state = {
-    user: {},
-    photo: {}
+    user: false
   };
-
-  getUser = () =>{
-    Auth.getGithubAuth().then((res) => {
-      console.log(res.data)
-      this.setState({
-        user:res.data,
-        photo: res.data.photos[0]
-      })
-    })
-  }
-
+  
   render() {
     const {user, login} = this.context;
+    
+    let profile;
+
+    if( localStorage.getItem('user')) {
+      const userLocalStorage = JSON.parse(localStorage.getItem('user'))
+      // this.setState({user: userLocalStorage})
+      profile = <p>{userLocalStorage.username}</p>
+    } else {
+      profile = <p>{"Please Login!"}</p>
+    }
 
     return (
       <>
-        <h1>Home Page: {user && user}</h1>
-
-        <a className="btn btn-secondary" onClick={this.context}>Get User Info</a>
-        <a className="btn btn-primary" href="/auth/github">Login to Github</a>
-        <a className="btn btn-primary" href="/auth/logout">Logout of Github</a>
-        <a className="btn btn-primary" href="/profile">User Profile</a>
-        <p>{this.state.user.id}</p>
-        <p>{this.state.user.displayName}</p>
-        <img src={this.state.photo.value}/>
-      
+        <Nav/>
+        <h1>Welcome: {profile}</h1>
       </>
     );
   }

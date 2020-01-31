@@ -1,21 +1,27 @@
 import React from "react";
 import { Link, Redirect, NavLink } from 'react-router-dom'
 import GlobalContext from "../../Context/globalContext";
+import Auth from "../../utils/Auth"
+import Nav from "../../components/Nav";
 
 class Login extends React.Component { 
   state = {};
+  
+  
+  handleLoginGithub = (res) => {
+    window.location.href="./auth/github";
+  }
   
   render() {
     
     const global = this.context;
     return (
       <div>
-        <nav>
-          <a  href="/auth/github">
-              <button className="btn btn-secondary">Login using Github</button>
-          </a>
-          <p>{global.user}</p>
-        </nav>
+        <Nav/>
+        <div className="container">
+          <h1>Please Login Using the following Authentication</h1>
+          <a className="btn btn-secondary"  onClick={this.handleLoginGithub}>Login with Github</a>
+        </div>
       </div>
     );
   }
