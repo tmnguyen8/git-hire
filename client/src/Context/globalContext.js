@@ -1,8 +1,8 @@
 import React from "react";
+import Auth from "../utils/Auth"
 
 const state = {
-  user: false,
-  login: () => {}
+  user: false
 };
 
 const globalContext = React.createContext(state);

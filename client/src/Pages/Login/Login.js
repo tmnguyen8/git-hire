@@ -11,9 +11,9 @@ class Login extends React.Component {
     return (
       <div>
         <nav>
-          <Link  to="/auth/github">
+          <a  href="/auth/github">
               <button className="btn btn-secondary">Login using Github</button>
-          </Link>
+          </a>
           <p>{global.user}</p>
         </nav>
       </div>
