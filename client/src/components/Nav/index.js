@@ -24,8 +24,9 @@ class Nav extends Component {
             console.log("response from server", this.state.user)
             console.log(global.user)
         }).then(() => {
-            history.push('/')
+            // history.push('/account')
             // return <Redirect to="/account"/>
+            window.location.href="./account";
         })  
     }
 
