@@ -1,8 +1,8 @@
 import React from "react";
 import Thumbnail from "../Thumbnail";
 import { Container, Row, Col } from "../Grid";
-import placeholderImage from "../../images/notfoundlogo.png"
-
+import placeholderImage from "../../images/notfoundlogo.png";
+import Button from "../Button";
 // Exporting both JobList and JobListItem from this file
 
 // JobList renders a bootstrap list item
@@ -36,6 +36,9 @@ export function JobListItem({
             <a rel="noreferrer noopener" target="_blank" href={href}>
               Go to job!
             </a>
+          </Col>
+          <Col size="xs-1 sm-1">
+          <Button>Save</Button>
           </Col>
         </Row>
       </Container>

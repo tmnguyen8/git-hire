@@ -51,33 +51,34 @@
 
 // export default Home
 
-import React from "./node_modules/react";
-import { Link, Redirect, NavLink } from './node_modules/react-router-dom'
+import React from "react";
+import { Link, Redirect, NavLink } from 'react-router-dom'
 import GlobalContext from "../../Context/globalContext";
 import Auth from "../../utils/Auth";
 import Nav from "../../components/Nav";
 
 class Home extends React.Component {
   state = {
-    user: {},
-    photo: {}
+    user: false
   };
-
-
-
+  
   render() {
     const {user, login} = this.context;
+    
+    let profile;
+
+    if( localStorage.getItem('user')) {
+      const userLocalStorage = JSON.parse(localStorage.getItem('user'))
+      // this.setState({user: userLocalStorage})
+      profile = <p>{userLocalStorage.username}</p>
+    } else {
+      profile = <p>{"Please Login!"}</p>
+    }
 
     return (
       <>
         <Nav/>
-        <h1>Home Page: {user && user}</h1>
-
-    
-        <p>{this.state.user.id}</p>
-        <p>{this.state.user.displayName}</p>
-        <img src={this.state.photo.value}/>
-      
+        <h1>Welcome: {profile}</h1>
       </>
     );
   }

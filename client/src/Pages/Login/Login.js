@@ -1,5 +1,5 @@
-import React from "./node_modules/react";
-import { Link, Redirect, NavLink } from './node_modules/react-router-dom'
+import React from "react";
+import { Link, Redirect, NavLink } from 'react-router-dom'
 import GlobalContext from "../../Context/globalContext";
 import Auth from "../../utils/Auth"
 import Nav from "../../components/Nav";
@@ -7,11 +7,9 @@ import Nav from "../../components/Nav";
 class Login extends React.Component { 
   state = {};
   
-  handleLoginGithub = () => {
-    console.log("user:", this.state.user)
-    Auth.loginGithub().then((res)=>{
-      return res.data
-    })
+  
+  handleLoginGithub = (res) => {
+    window.location.href="./auth/github";
   }
   
   render() {
@@ -20,8 +18,10 @@ class Login extends React.Component {
     return (
       <div>
         <Nav/>
-        <div>
-          <a className="btn btn-secondary" href="/auth/github">Login with Github</a>
+        <div className="container">
+          <h1>Please Login Using the following Authentication</h1>
+          {/* <a className="btn btn-secondary" href="/auth/github" onClick={this.handleLoginGithub}>Login with Github</a> */}
+          <a className="btn btn-secondary"  onClick={this.handleLoginGithub}>Login with Github</a>
           <p>{global.user}</p>
         </div>
       </div>

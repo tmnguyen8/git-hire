@@ -89,7 +89,7 @@ function ProtectedRoute({ component: Component, ...rest }) {
       {({ user }) => (
         <Route
           {...rest}
-          render={() => (user ? <Component /> : <Redirect to="/" />)}
+          render={() => (user ? <Component /> : <Redirect to="/account" />)}
         />
       )}
     </GlobalContext.Consumer>
