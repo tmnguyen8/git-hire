@@ -1,4 +1,4 @@
-import React from "react";
+import React from "./node_modules/react";
 import GlobalContext from "../../Context/globalContext";
 import Search from "../../components/Search";
 import Nav from "../../components/Nav";

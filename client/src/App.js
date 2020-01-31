@@ -40,9 +40,9 @@ import {
   Switch,
   Redirect
 } from "react-router-dom";
-import Home from "./pages/Home";
-import Account from "./pages/Account";
-import Login from "./pages/Login";
+import Home from "./Pages/Home";
+import Account from "./Pages/Account";
+import Login from "./Pages/Login";
 import GlobalContext from "./Context/globalContext";
 import Auth from "./utils/Auth";
 import Nav from "./components/Nav";

@@ -51,8 +51,8 @@
 
 // export default Home
 
-import React from "react";
-import { Link, Redirect, NavLink } from 'react-router-dom'
+import React from "./node_modules/react";
+import { Link, Redirect, NavLink } from './node_modules/react-router-dom'
 import GlobalContext from "../../Context/globalContext";
 import Auth from "../../utils/Auth";
 import Nav from "../../components/Nav";
