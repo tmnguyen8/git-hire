@@ -3,11 +3,17 @@ import { Link, Redirect, NavLink } from 'react-router-dom'
 import "./style.css";
 import Auth from "../../utils/Auth";
 import GlobalContext from "../../Context/globalContext";
-import {
-    withRouter
-  } from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
+import history from "../../history";
 
 class Nav extends Component {
+    constructor(props) {
+        super(props)
+    
+        /** @type BrowserRouter */
+        this.router = undefined
+      }
+
     state = {
         user: false
     };
@@ -48,6 +54,18 @@ class Nav extends Component {
         }
         return JSON.stringify(obj) === JSON.stringify({});
       }
+    
+//     getGithubProfile = () => {
+//         Auth.getGithubAuth().then((res)=>{
+//             this.setState({user: res.data})
+//             console.log("response from server", this.state.user)
+//             console.log(global.user)
+//         }).then(() => {
+//             // history.push('/account')
+//             // return <Redirect to="/account"/>
+//             window.location.href="./account";
+//         })  
+//     }
 
 
     render() {
@@ -62,6 +80,7 @@ class Nav extends Component {
                 <Link className="navbar-brand" to="/">
                     <img src="https://raw.githubusercontent.com/tmnguyen8/git-hire/master/client/src/images/job.png" alt="banner" className="brand-logo"></img>
                 </Link>
+
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>

@@ -69,7 +69,7 @@ app.get(
 app.get("/github/profile", (req, res) => {
     console.log('user:', user);
     console.log("getting user data!");
-    res.json(user)
+    res.send(user)
 })
 
 
