@@ -3,11 +3,20 @@ import {Link, Redirect} from "react-router-dom";
 import "./style.css";
 import Auth from "../../utils/Auth";
 import GlobalContext from "../../Context/globalContext";
+import history from "../../history";
 
 class Nav extends Component {
+    constructor(props) {
+        super(props)
+    
+        /** @type BrowserRouter */
+        this.router = undefined
+      }
+
     state = {
-        user: null
+        user: false
     };
+
     
     getGithubProfile = () => {
         Auth.getGithubAuth().then((res)=>{
@@ -15,11 +24,9 @@ class Nav extends Component {
             console.log("response from server", this.state.user)
             console.log(global.user)
         }).then(() => {
-            return <Redirect to="/" />;
-        }
-        )
-        
-        
+            history.push('/')
+            // return <Redirect to="/account"/>
+        })  
     }
 
     render() {
