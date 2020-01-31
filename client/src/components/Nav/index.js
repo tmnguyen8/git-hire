@@ -6,7 +6,6 @@ import GlobalContext from "../../Context/globalContext";
 import {withRouter} from 'react-router-dom'
 import history from "../../history";
 
-
 class Nav extends Component {
     constructor(props) {
         super(props)

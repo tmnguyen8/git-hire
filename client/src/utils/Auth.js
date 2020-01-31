@@ -10,6 +10,5 @@ export default {
     },
     logoutGithub: function () {
         return axios.get("/auth/logout")
-
-    } 
+    }
 }
