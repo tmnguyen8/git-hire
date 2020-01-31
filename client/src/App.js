@@ -68,7 +68,7 @@ class App extends React.Component {
           <Nav />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={Login}/>>
+            <Route exact path="/login" component={Login}/>
             <Route exact path="/account" component={Account} />
             <Route exact path="/auth/github" component={Home} />
             <ProtectedRoute exact path="/safe" component={Account} />
@@ -90,7 +90,7 @@ function ProtectedRoute({ component: Component, ...rest }) {
       {({ user }) => (
         <Route
           {...rest}
-          render={() => (user ? <Component /> : <Redirect to="/" />)}
+          render={() => (user ? <Component /> : <Redirect to="/account" />)}
         />
       )}
     </GlobalContext.Consumer>
