@@ -1,18 +1,18 @@
-// const mongoose = require('mongoose');
+ const mongoose = require('mongoose');
 
-// const Schema = mongoose.Schema;
+ const Schema = mongoose.Schema;
 
-// const NoteSchema = new Schema({
-//     title: {
-//         type: String,
-//         required: false
-//     },
-//     body: {
-//         type: String,
-//         required: false
-//     }
-// })
+ const SavedJobsSchema = new Schema({
+     savedJobTitle: {
+        type: String,
+         required: "saved job is required"
+     },
+     savedJobBody: {
+         type: String,
+         required: "saved job data is required"
+     }
+ })
 
-// var Note = mongoose.model('Note', NoteSchema);
+ var Note = mongoose.model('SavedJobs', SavedJobsSchema);
 
-// module.exports = Note;
+ module.exports = Note;
