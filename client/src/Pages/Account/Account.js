@@ -1,6 +1,7 @@
 import React from "react";
 import GlobalContext from "../../Context/globalContext";
-import Search from "../../components/Search"
+import Search from "../../components/Search";
+import Nav from "../../components/Nav";
 
 class Account extends React.Component {
   state = {};
@@ -10,6 +11,7 @@ class Account extends React.Component {
     console.log(global);
     return (
       <div>
+        <Nav/>
         <h1>User Page: {global.user.displayName}</h1>
         <p>{global.user.displayName}</p>
         <Search />

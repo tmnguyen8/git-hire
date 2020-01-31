@@ -1,8 +1,12 @@
 import axios from "axios";
 
 export default {
-    getGithubAuth: function() {
-        console.log("testing github")
-        return axios.get("/auth/profile")
+    getGithubAccount: function() {
+        return axios.get("/auth/github/profile")
+    },
+    logoutGithub: function () {
+        return axios.get("/auth/logout")
     }
+
+    
 }
