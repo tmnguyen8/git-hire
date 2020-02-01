@@ -198,6 +198,7 @@ class Search extends Component {
                     return (
                       <JobListItem
                         key={job.id}
+                        id={job.id}
                         title={job.title}
                         href={job.url}
                         company={job.company}

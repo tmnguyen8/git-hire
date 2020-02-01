@@ -37,6 +37,9 @@ export default {
     return axios.get("/api/glassdoor", { params: { 
       title: title
     } });
+  },
+  postSavedJob: function(svdJobData){
+    return axios.post("/api/savedJob", svdJobData)
   }
 
 };

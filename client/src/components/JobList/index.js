@@ -3,11 +3,18 @@ import Thumbnail from "../Thumbnail";
 import { Container, Row, Col } from "../Grid";
 import placeholderImage from "../../images/notfoundlogo.png";
 import Button from "../Button";
+import API from "../../utils/API";
+
 // Exporting both JobList and JobListItem from this file
 
 // JobList renders a bootstrap list item
 export function JobList({ children }) {
+  
   return <ul className="list-group">{children}</ul>;
+}
+
+export function jobSaveButtonClick(svdJobData) {
+  API.postSavedJob(svdJobData)
 }
 
 // JobListItem renders a bootstrap list item containing data from the recipe api call
@@ -18,8 +25,20 @@ export function JobListItem({
   location, 
   description,
   salary,
-  href
+  href,
+  id
 }) {
+
+  const svdJobData = {
+    thumbnail,
+    title,
+    company,
+    location, 
+    description,
+    salary,
+    href,
+    id
+  }
   return (
     <li className="list-group-item">
       <Container>
@@ -38,7 +57,7 @@ export function JobListItem({
             </a>
           </Col>
           <Col size="xs-1 sm-1">
-          <Button>Save</Button>
+          <Button key={id} onClick={()=> jobSaveButtonClick(svdJobData)}>Save</Button>
           </Col>
         </Row>
       </Container>
