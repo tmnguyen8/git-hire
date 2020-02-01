@@ -11,9 +11,11 @@ class Profile extends Component {
         console.log(userInfo.username)
         
         return(
-            <div>
-                <h3>{userInfo.username}</h3>
-                <img src={userInfo.photos[0].value}/>
+            <div className="card">
+                <p>{userInfo.username}</p>
+                 
+                <img src={userInfo.photos[0].value} />
+                
                 <a href={userInfo.profileUrl}>Github</a>
             </div>
         )
