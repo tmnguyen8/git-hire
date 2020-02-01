@@ -1,6 +1,8 @@
 import React from "react";
 import GlobalContext from "../../Context/globalContext";
 import Nav from "../../components/Nav"; 
+import Profile from "../../components/Profile";
+
 class Account extends React.Component {
   state = {};
   
@@ -11,6 +13,7 @@ class Account extends React.Component {
     return (
       <div>
         <Nav/>
+        <Profile />
       </div>
       
     );
