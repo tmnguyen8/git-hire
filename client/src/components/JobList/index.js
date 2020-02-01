@@ -15,6 +15,7 @@ export function JobList({ children }) {
 
 export function jobSaveButtonClick(svdJobData) {
   API.postSavedJob(svdJobData)
+  console.log("this is username: "+svdJobData.username)
 }
 
 // JobListItem renders a bootstrap list item containing data from the recipe api call
@@ -28,6 +29,8 @@ export function JobListItem({
   href,
   id
 }) {
+  const profile = JSON.parse(localStorage.getItem('user'))
+  const username = profile.username
 
   const svdJobData = {
     thumbnail,
@@ -37,8 +40,10 @@ export function JobListItem({
     description,
     salary,
     href,
-    id
+    id,
+    username
   }
+
   return (
     <li className="list-group-item">
       <Container>
