@@ -75,7 +75,7 @@ class Nav extends Component {
                 <div className="collapse navbar-collapse" id="navbarColor03">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                            <Link to="/" className={window.location.pathname === "/" || window.location.pathname === "/home" ? "nav-link active" : "nav-link"}>Git-Hire
+                            <Link to="/">Git-Hire
                             </Link>
                         </li>
                 
@@ -86,9 +86,7 @@ class Nav extends Component {
                             <button className="btn btn-primary"  onClick={this.getAccount} type="submit">Account</button>
                         </li>
                         <li className="list-inline-item">
-                            <Link to="/login" className={window.location.pathname === "login"}>
-                            <button className="btn btn-primary " onClick={this.handleGithubLogin} type="submit">Login</button>
-                            </Link>
+                            <Link className="btn btn-primary" to="/login">Login</Link>
                         </li>
                         <li className="list-inline-item">
                             <button className="btn btn-primary " onClick={this.handleGithubLogout} type="submit">logout</button>
