@@ -27,7 +27,7 @@
      company_logo: {
          type: String
      },
-     user: {
+     username: {
          type: String
      }
 
