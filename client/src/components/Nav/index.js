@@ -3,7 +3,6 @@ import { Link, Redirect, NavLink } from 'react-router-dom'
 import "./style.css";
 import Auth from "../../utils/Auth";
 import GlobalContext from "../../Context/globalContext";
-import {withRouter} from 'react-router-dom'
 import history from "../../history";
 
 class Nav extends Component {
@@ -82,16 +81,16 @@ class Nav extends Component {
                 
                     </ul>
         
-                    <ul class="list-inline">
-                        <li class="list-inline-item">
+                    <ul className="list-inline">
+                        <li className="list-inline-item">
                             <button className="btn btn-primary"  onClick={this.getAccount} type="submit">Account</button>
                         </li>
-                        <li class="list-inline-item">
+                        <li className="list-inline-item">
                             <Link to="/login" className={window.location.pathname === "login"}>
                             <button className="btn btn-primary " onClick={this.handleGithubLogin} type="submit">Login</button>
                             </Link>
                         </li>
-                        <li class="list-inline-item">
+                        <li className="list-inline-item">
                             <button className="btn btn-primary " onClick={this.handleGithubLogout} type="submit">logout</button>
                         </li>
                     </ul>
@@ -104,4 +103,4 @@ class Nav extends Component {
 }
 Nav.contextType = GlobalContext;
 
-export default withRouter(Nav);
+export default Nav;
