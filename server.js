@@ -21,7 +21,14 @@ app.use(cors());
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/GitHireUsersDB");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/GitHireUsersDB",
+{ useUnifiedTopology: true, useNewUrlParser: true }, 
+(err) => {
+  if (err) {
+    console.log(err)
+  }
+  console.log('DB connected')
+});
 
 // Send every request to the React app
 // Define any API routes before this runs
