@@ -86,7 +86,7 @@ class Nav extends Component {
                             <button className="btn btn-primary"  onClick={this.getAccount} type="submit">Account</button>
                         </li>
                         <li className="list-inline-item">
-                            <button className="btn btn-primary " onClick={this.handleGithubLogin} type="submit">Login</button>
+                            <Link className="btn btn-primary" to="/login">Login</Link>
                         </li>
                         <li className="list-inline-item">
                             <button className="btn btn-primary " onClick={this.handleGithubLogout} type="submit">logout</button>
