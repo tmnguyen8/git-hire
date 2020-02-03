@@ -1,6 +1,6 @@
 import React from "react";
-import { Link, Redirect, NavLink } from 'react-router-dom'
-import GlobalContext from "../../Context/globalContext";
+// import { Link, Redirect, NavLink } from 'react-router-dom'
+// import GlobalContext from "../../Context/globalContext";
 import Auth from "../../utils/Auth"
 import Nav from "../../components/Nav";
 
@@ -30,19 +30,17 @@ class Login extends React.Component {
           console.log(this.isEmpty(res.data))
           if (!(this.isEmpty(res.data))) {
               localStorage.setItem('user', JSON.stringify(this.state.user))
-          } else {
-              console.log("You did not log in yet, please login")
-          }
+          } 
       }).then(()=>{
           if(localStorage.getItem('user')) {
-              console.log("local storage has user")
+              // console.log("local storage has user")
               window.location.href="/account";
           } else {
-              console.log("no local storage user")
+              // console.log("no local storage user")
               window.location.href="/login";
           }
       })
-  }
+    }
 
   // Check if the object is empty
   isEmpty = (obj) =>{
@@ -59,13 +57,13 @@ class Login extends React.Component {
   // }
 
   render() {
-    const global = this.context;
+    // const global = this.context;
     return (
       <div>
         <Nav/>
         <div className="container">
           <h1>Please Login Using the following Authentication</h1>
-          <a className="btn btn-secondary"  onClick={this.handleLoginGithub}>Login with Github</a>
+          <button className="btn btn-primary"  onClick={this.handleLoginGithub}>Login with Github</button>
         </div>
       </div>
     );

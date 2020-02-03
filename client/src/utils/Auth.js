@@ -10,5 +10,8 @@ export default {
     },
     logoutGithub: function () {
         return axios.get("/auth/logout")
+    },
+    login: function() {
+        return window.location.href="/auth/github"
     }
 }
