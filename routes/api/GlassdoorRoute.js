@@ -23,9 +23,9 @@ router.get("/glassdoor", (req, res) => {
         result.location = $(this).children(".jobContainer").children(".empLoc").children("span").text();
         result.description = null;
         result.salary = $(this).children(".jobContainer").children(".jobFooter").children(".salaryEstimate ").children(".jobSalaryRange").text();
-        // result.imageURL = $(this).children(".logoWrap").children(".sgLogo").find("img").data("original");
+        result.imageURL = "";
         result.company_logo = $(this).children(".logoWrap").children("a").children(".sqLogo").children("img").data("original");
-
+        result.provider = "Glassdoor";
 
         
         if (result.title) {

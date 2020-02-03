@@ -18,13 +18,14 @@ router.get("/github", (req, res) => {
         result.url = element.url;
         result.location = element.location;
         result.description = element.description;
-        result.salary
+        result.salary;
         result.company_logo = element.company_logo;
-        result.created_at = element.created_at; 
+        result.created_at = element.created_at;
+        result.provider = "Github" ;
 
         responseData.push(result)
       });
-      console.log(responseData)
+      // console.log(responseData)
 
       res.json(responseData)
     })

@@ -3,16 +3,37 @@
  const Schema = mongoose.Schema;
 
  const SavedJobsSchema = new Schema({
-     savedJobTitle: {
-        type: String,
-         required: "saved job is required"
+     id: {
+        type: String
      },
-     savedJobBody: {
-         type: String,
-         required: "saved job data is required"
+     title: {
+         type: String
+     },
+     company: {
+         type: String
+     },
+     url: {
+         type: String
+     },
+     location: {
+         type: String
+     },
+     description: {
+         type: String
+     },
+     salary: {
+         type: String
+     },
+     company_logo: {
+         type: String
+     },
+     username: {
+         type: String
      }
+
  })
 
- var Note = mongoose.model('SavedJobs', SavedJobsSchema);
+ var SavedJob = mongoose.model('SavedJobs', SavedJobsSchema);
 
- module.exports = Note;
+ module.exports = SavedJob;
+
