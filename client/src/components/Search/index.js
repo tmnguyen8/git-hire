@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Jumbotron from "../Jumbotron";
-import Nav from "../Nav";
+// import Jumbotron from "../Jumbotron";
+// import Nav from "../Nav";
 import Input from "../Input";
 import Button from "../Button";
 import API from "../../utils/API";
@@ -26,6 +26,10 @@ class Search extends Component {
 
   
   handleSearch = (event) =>{
+    if(!(localStorage.getItem('user'))){
+      return alert("Please login to Search")
+    }
+
     event.preventDefault();
     
     // GITHUB JOBS

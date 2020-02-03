@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Link, Redirect, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import "./style.css";
 import Auth from "../../utils/Auth";
-import GlobalContext from "../../Context/globalContext";
-import history from "../../history";
+// import GlobalContext from "../../Context/globalContext";
+// import history from "../../history";
 
 class Nav extends Component {
     constructor(props) {
@@ -57,7 +57,7 @@ class Nav extends Component {
     }
 
     render() {
-        const global = this.context;
+        // const global = this.context;
         
         // if (this.state.user === false) {
         //     return <Redirect to='/login' />

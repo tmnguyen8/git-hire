@@ -1,7 +1,7 @@
 import React from "react";
-import { Link, Redirect, NavLink } from 'react-router-dom'
-import GlobalContext from "../../Context/globalContext";
-import Auth from "../../utils/Auth";
+// import { Link, Redirect, NavLink } from 'react-router-dom'
+// import GlobalContext from "../../Context/globalContext";
+// import Auth from "../../utils/Auth";
 import Nav from "../../components/Nav";
 import Search from "../../components/Search";
 
@@ -11,7 +11,7 @@ class Home extends React.Component {
   };
   
   render() {
-    const {user, login} = this.context;
+    // const {user, login} = this.context;
     
     let profile;
 
