@@ -33,6 +33,7 @@ router.get("/usajobs", (req, res) => {
                 result.description = item.MatchedObjectDescriptor.QualificationSummary;
                 result.salary = "";
                 result.imageURL = "";
+                result.provider = "USAJobs";
 
                 resultData.push(result)
         })

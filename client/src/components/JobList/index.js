@@ -27,7 +27,8 @@ export function JobListItem({
   description,
   salary,
   href,
-  id
+  id,
+  provider
 }) {
   const profile = JSON.parse(localStorage.getItem('user'))
   const username = profile.username
@@ -41,7 +42,8 @@ export function JobListItem({
     salary,
     href,
     id,
-    username
+    username,
+    provider
   }
 
   return (
@@ -53,6 +55,7 @@ export function JobListItem({
           </Col>
           <Col size="xs-8 sm-9">
             <h3>{title}</h3>
+            <div>Provider: {provider}</div>
             <div>Company: {company}</div>
             <div>Location: {location}</div>
             <div> {description? `Description: ${description}`: null} </div>

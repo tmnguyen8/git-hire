@@ -25,6 +25,9 @@ router.get("/simplyhired", (req, res) => {
       result.salary = $(this).children(".SerpJob-jobCard").children('.SerpJob-metaInfo').children('div').children('span').text();
 
       result.imageURL = $(this).find("rpContent").children("viewjob-header-bar").last("div").children("viewjob-compnay-logo").attr("src");
+      
+      result.provider = "SimplyHired";
+      
       scrapeData.push(result)
       // console.log(result)
     })

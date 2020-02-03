@@ -21,6 +21,7 @@ router.get("/indeed", (req, res) => {
         result.description = $(this).children('.summary').children('ul').children('li').text();
         result.salary = $(this).children('.salarySnippet').children('.salary').children('.salaryText').text();
         result.imageURL = "";
+        result.provider = "Indeed"
 
         scrapeData.push(result)
         // console.log(result)

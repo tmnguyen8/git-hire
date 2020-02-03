@@ -99,6 +99,6 @@ class Nav extends Component {
     }
     
 }
-Nav.contextType = GlobalContext;
+// Nav.contextType = GlobalContext;
 
 export default Nav;
