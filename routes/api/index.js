@@ -6,7 +6,7 @@ const MonsterRoute = require('./MonsterRoute');
 const GlassdoorRoute = require('./GlassdoorRoute');
 const SimplyhiredRoute = require('./SimplyhiredRoute')
 const savedJobRoute = require('./savedJobRoute');
-const jobRoute = require("./JobRoute");
+
 
 router.use(GitHubRoute);
 router.use(IndeedRoute);
@@ -15,6 +15,6 @@ router.use(MonsterRoute);
 router.use(GlassdoorRoute);
 router.use(SimplyhiredRoute);
 router.use(savedJobRoute);
-router.use(jobRoute)
+
 
 module.exports = router;

@@ -1,40 +1,41 @@
-import React from "react";
-// import React, { useState, useEffect, useContext } from "react";
-// import GlobalContext from "../../Context/globalContext";
-import Nav from "../../components/Nav"; 
+import React, { useState, useEffect, useContext } from "react";
 import API from "../../utils/API";
+import GlobalContext from "../../Context/globalContext";
+import { JobList, JobListItem } from "../../components/JobList";
+import { Container, Row, Col } from "../../components/Grid";
 
 
-
-class Account extends React.Component {
-  state = {
-    userSavedJobs: []
-  };
-
+const JobAccount = () => {
+  let initialContext = {
+    favJobList: []
+  }
   
-  getFavorite = () =>{
-    console.log('testing from client')
-    const userLocalStorage = JSON.parse(localStorage.getItem('user'))
-    var username = userLocalStorage.username;
+    const [state, setState] = useState(initialContext);
+    const [favJobList] = useState([])
 
-    API.getSavedJobByUser(username).then((res)=>{
-        console.log(res)
-      }).catch(err=>console.log(err))
-  }
+    useEffect(() => {
+        
+        const userLocalStorage = JSON.parse(localStorage.getItem('user'))
+        var username = userLocalStorage.username;
 
-  render() {
+        API.getSavedJobByUser(username)
+        .then((res)=>{
+            setState({favJobList: res.data});
+            console.log("this is from state", state.favJobList)
+        })
+        .then(()=>{
+            
+        })
+        .catch(err=>console.log(err))
 
-    // const global = this.context;
-
-    return (
+    });
+    
+   
+    return(
       <div>
-        <Nav/>
-        <button onClick={this.getFavorite}>Get Fav</button>
       </div>
-      
-    );
-  }
-}
+  
+    )
+};
 
-// Account.contextType = GlobalContext;
-export default Account;
+export default JobAccount;
