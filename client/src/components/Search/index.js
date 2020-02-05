@@ -26,6 +26,7 @@ class Search extends Component {
 
   
   handleSearch = (event) =>{
+    this.setState({jobs: []})
     if(!(localStorage.getItem('user'))){
       return alert("Please login to Search")
     }

@@ -14,6 +14,17 @@ router.post("/savedJob", (req, res) => {
     })
 });
 
+router.get("/savedJobByUser", (req, res)=>{
+ 
+    var username = req.query.username
+    db.SavedJobs
+        .find({ username: username })
+        .then((resDB)=>{
+            res.json(resDB)
+        })
+        .catch(err=>console.log(err))
+})
+
 
 
 module.exports = router;
