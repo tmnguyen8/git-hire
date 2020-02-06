@@ -53,8 +53,7 @@ app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveU
 
 app.get("/github", passport.authenticate("github"))
 
-app.get(
-  "/github/callback",
+app.get("/github/callback",
   passport.authenticate("github"),
   (req, res) => {
     // console.log('user after callback', user);
