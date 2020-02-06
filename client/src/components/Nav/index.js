@@ -66,7 +66,7 @@ class Nav extends Component {
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <Link className="navbar-brand" to="/">
-                    <img src="https://raw.githubusercontent.com/tmnguyen8/git-hire/master/client/src/images/job.png" alt="banner" className="brand-logo"></img>
+                    <img src="https://raw.githubusercontent.com/tmnguyen8/git-hire/master/client/src/images/Git Hire Logo.png" alt="banner" className="brand-logo"></img>
                 </Link>
 
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
