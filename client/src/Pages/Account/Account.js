@@ -3,7 +3,9 @@ import API from "../../utils/API";
 import GlobalContext from "../../Context/globalContext";
 import { JobList, JobListItem } from "../../components/JobList";
 import { Container, Row, Col } from "../../components/Grid";
+import Profile from "../../components/Profile";
 import { FavListItem, FavList } from "../../components/FavList";
+
 
 
 const JobAccount = () => {
@@ -31,6 +33,7 @@ const JobAccount = () => {
       <Row>
         <div className="col-2">
           <h3>Account Info</h3>
+          <Profile />
         </div>
 
         <div className="col-8">
