@@ -11,3 +11,9 @@ nav.btn {
   width: 143px;
   height: 82px;
 }
+.nav-item {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.btn-primary {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+} 

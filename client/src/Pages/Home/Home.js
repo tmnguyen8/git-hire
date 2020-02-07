@@ -4,7 +4,7 @@ import GlobalContext from "../../Context/globalContext";
 // import Auth from "../../utils/Auth";
 import Nav from "../../components/Nav";
 import Search from "../../components/Search";
-
+import "./home.css"
 class Home extends React.Component {
   
   
@@ -25,7 +25,7 @@ class Home extends React.Component {
 
     return (
       <div>
-        <h1>Welcome: {user.username}</h1>
+        <h1 className= "welcome-message">Welcome to GitHire! : {user.username}</h1>
         <Search />
       </div>
     );

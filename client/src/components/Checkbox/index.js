@@ -7,6 +7,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Checkbox from '@material-ui/core/Checkbox';
 import { Container, Row, Col } from "../Grid";
+import "./checkbox.css";
 
 const useStyles = makeStyles(theme => ({
   root: {

@@ -1,0 +1,6 @@
+.text-center {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+::placeholder {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

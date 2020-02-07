@@ -38,3 +38,7 @@ p {
     margin: 0 auto;
 }
 
+.welcome-message {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
