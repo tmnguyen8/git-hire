@@ -22,6 +22,15 @@ router.get("/savedJobByUser", (req, res)=>{
             res.json(resDB)
         })
         .catch(err=>console.log(err))
+});
+router.delete("/savedJob", (req, res)=>{
+    var username = req.query.username
+    console.log("testing",req.query.favJobID)
+    db.SavedJobs
+        .findById({_id: req.query.favJobID})
+        .then(dbModel => dbModel.remove())
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err))
 })
 
 
