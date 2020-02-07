@@ -19,8 +19,9 @@ class App extends React.Component {
   
 
   // Route to Github Authentication Route
-  handleGithubLogin = () => {
+  handleGithubLogin = (res) => {
     window.location.href="./auth/github"
+    
   };
 
   // Route to Github to Logout and clear date client and server sides
@@ -35,22 +36,36 @@ class App extends React.Component {
 
   // Getting Github Account information
   getAccount = () =>{
+      console.log(this.state.user)
+      console.log((this.isEmpty(this.state.user)))
       Auth.getGithubAccount()
         .then((res)=>{
-          this.setState({user:res.data})
+          this.setState({user: res.data})
           localStorage.setItem("user", JSON.stringify(this.state.user))
-          if (this.state.user && localStorage.getItem("user")){
-            window.location.href="/account"
+        })
+        .then(()=>{
+          console.log("test")
+          if (this.state.user && (this.isEmpty(this.state.user))){
+            window.location.href="/login"
             // this.props.history.push('/account')
             // return <Redirect to="/account"/>
           } else {
             window.location.href="/account"
-            // this.props.history.push('/login')
             // return <Redirect to="/login"/>
           }
         })
         .catch(err=>console.log(err))
   };
+
+  // Check if the object is empty
+  isEmpty = (obj) =>{
+    for(var prop in obj) {
+      if(obj.hasOwnProperty(prop)) {
+        return false;
+      }
+    }
+    return JSON.stringify(obj) === JSON.stringify({});
+  }
   
   state = {
     user: false,
@@ -69,7 +84,7 @@ class App extends React.Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login}/>
             <Route exact path="/account" component={Account} />
-            <Route exact path="/auth/github" component={Home} />
+            <Route exact path="/auth/github" component={Login} />
             <ProtectedRoute exact path="/account" component={Account} />
             <Route exact path="*" component={()=>"404 NOT FOUND"} />
           </Switch>
@@ -81,9 +96,11 @@ class App extends React.Component {
 export default App;
 
 function ProtectedRoute({ component: Component, ...rest }) {
+  
   return (
     <GlobalContext.Consumer>
       {({ user }) => (
+        
         <Route
           {...rest}
           render={() => (user ? <Component /> : <Redirect to="/login" />)}

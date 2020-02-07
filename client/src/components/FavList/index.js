@@ -4,6 +4,7 @@ import { Container, Row, Col } from "../Grid";
 import placeholderImage from "../../images/notfoundlogo.png";
 import Button from "../Button";
 import API from "../../utils/API";
+import StatusBar from "../StatusBar";
 
 // Exporting both JobList and JobListItem from this file
 
@@ -15,8 +16,10 @@ export function FavList({ children }) {
 
 export function rmvButtonClick(svdJobData) {
   API.removeSavedJob(svdJobData.id)
-  console.log("this is id: "+ svdJobData.id)
+  .catch(err=>console.log(err))
+  // console.log("this is id: "+ svdJobData.id)
 }
+
 
 // JobListItem renders a bootstrap list item containing data from the recipe api call
 export function FavListItem({
@@ -28,7 +31,8 @@ export function FavListItem({
   salary,
   href,
   id,
-  provider
+  provider,
+  status
 }) {
   const profile = JSON.parse(localStorage.getItem('user'))
   const username = profile.username
@@ -43,7 +47,8 @@ export function FavListItem({
     href,
     id,
     username,
-    provider
+    provider,
+    status
   }
 
   return (
@@ -60,12 +65,16 @@ export function FavListItem({
             <div>Location: {location}</div>
             <div> {description? `Description: ${description}`: null} </div>
             <div> {salary? `Salary: ${salary}`: null} </div>
+            <div> {status? `My Job Status: ${status}`: null} </div>
             <a rel="noreferrer noopener" target="_blank" href={href}>
               Go to job!
             </a>
           </Col>
           <Col size="xs-1 sm-1">
           <Button className ="btn btn-lg custom-button" key={id} onClick={()=> rmvButtonClick(svdJobData)}>Remove</Button>
+          <StatusBar 
+          key={id}
+          id={id}/>
           </Col>
         </Row>
       </Container>
