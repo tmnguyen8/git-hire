@@ -3,6 +3,9 @@ import API from "../../utils/API";
 import GlobalContext from "../../Context/globalContext";
 import { JobList, JobListItem } from "../../components/JobList";
 import { Container, Row, Col } from "../../components/Grid";
+import Profile from "../../components/Profile";
+import { FavListItem, FavList } from "../../components/FavList";
+
 
 
 const JobAccount = () => {
@@ -30,6 +33,7 @@ const JobAccount = () => {
       <Row>
         <div className="col-2">
           <h3>Account Info</h3>
+          <Profile />
         </div>
 
         <div className="col-8">
@@ -38,12 +42,12 @@ const JobAccount = () => {
             {!state.favJobList.length ? (
               <h1 className="text-center">No Fav Jobs to Display</h1>
               ) : (
-                <JobList>
+                <FavList>
                   {state.favJobList.map(job => {
                     return (
-                      <JobListItem
-                        key={job.id}
-                        id={job.id}
+                      <FavListItem
+                        key={job._id}
+                        id={job._id}
                         title={job.title}
                         href={job.url}
                         company={job.company}
@@ -55,7 +59,7 @@ const JobAccount = () => {
                       />
                     );
                   })}
-                </JobList>
+                </FavList>
               )
             }
           </div>
