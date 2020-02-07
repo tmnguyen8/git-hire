@@ -1,6 +1,6 @@
 import React from "react";
 // import { Link, Redirect, NavLink } from 'react-router-dom'
-// import GlobalContext from "../../Context/globalContext";
+import GlobalContext from "../../Context/globalContext";
 import Auth from "../../utils/Auth"
 import Nav from "../../components/Nav";
 
@@ -71,4 +71,25 @@ class Login extends React.Component {
 };
 
 // Login.contextType = GlobalContext;
-export default Login;
+// export default Login;
+
+
+function LoginContext() {
+  return (
+    <GlobalContext.Consumer>
+      {state=>(
+        <div className="container">
+          <h1>Please Login using the following Authentication</h1>
+          <button
+            className="btn btn-primary"
+            onClick={state.handleGithubLogin}
+          >
+            Login with Github
+          </button>
+        </div>
+      )}
+    </GlobalContext.Consumer>
+  )
+}
+
+export default LoginContext;

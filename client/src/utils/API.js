@@ -40,6 +40,12 @@ export default {
   },
   postSavedJob: function(svdJobData){
     return axios.post("/api/savedJob", svdJobData)
+  },
+  getSavedJobByUser: function (username){
+    return axios.get("/api/savedJobByUser", {params:{
+      username: username
+    }})
   }
+
 
 };
