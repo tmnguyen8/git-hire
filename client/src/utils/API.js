@@ -45,6 +45,11 @@ export default {
     return axios.get("/api/savedJobByUser", {params:{
       username: username
     }})
+  },
+  removeSavedJob: function(favJobID){
+    return axios.delete("/api/savedJob" , {params:{
+      favJobID:favJobID
+    }})
   }
 
 
