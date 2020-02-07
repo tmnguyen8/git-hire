@@ -1,8 +1,8 @@
-.jobSearch {
+.custom-button {
     border-radius: 50px;
     max-width: 300px;
     text-align: center;
-
+    background: rgb(129, 128, 128);
 }
 
 Button {

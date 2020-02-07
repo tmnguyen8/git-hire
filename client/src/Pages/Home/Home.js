@@ -25,7 +25,7 @@ class Home extends React.Component {
 
     return (
       <div>
-        <h1 className= "welcome-message">Welcome to GitHire! : {user.username}</h1>
+        <h1 className= "welcome-message">Welcome to GitHire {user.username} !</h1>
         <Search />
       </div>
     );

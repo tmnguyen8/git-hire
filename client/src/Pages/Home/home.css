@@ -40,5 +40,7 @@ p {
 
 .welcome-message {
     font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    text-shadow: 2px 2px rgb(236, 232, 189);
 }
 
