@@ -7,6 +7,7 @@ import API from "../../utils/API";
 import { JobList, JobListItem } from "../JobList";
 import { Container, Row, Col } from "../Grid";
 import Checkbox from "../Checkbox"; 
+import "./style.css";
 
 class Search extends Component {
   state = {

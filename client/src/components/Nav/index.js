@@ -84,13 +84,13 @@ function NavContext() {
             
                         <ul className="list-inline">
                             <li className="list-inline-item">
-                                <button className="btn btn-primary"  onClick={state.getAccount} type="submit">Account</button>
+                                <button className="btn-primary"  onClick={state.getAccount} type="submit">Account</button>
                             </li>
                             <li className="list-inline-item">
-                                <Link className="btn btn-primary" to="/login">Login</Link>
+                                <Link className="btn-primary" to="/login">Login</Link>
                             </li>
                             <li className="list-inline-item">
-                                <button className="btn btn-primary " onClick={state.handleGithubLogout} type="submit">logout</button>
+                                <button className="btn-primary " onClick={state.handleGithubLogout} type="submit">Logout</button>
                             </li>
                         </ul>
                     </div>
