@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Jumbotron from "../Jumbotron";
-import Nav from "../Nav";
+// import Jumbotron from "../Jumbotron";
+// import Nav from "../Nav";
 import Input from "../Input";
 import Button from "../Button";
 import API from "../../utils/API";
@@ -24,88 +24,59 @@ class Search extends Component {
     });
   };
 
-  handleGithubSubmit = event => {
-    // When the form is submitted, prevent its default behavior, get recipes update the recipes state
+  
+  handleSearch = (event) =>{
+    this.setState({jobs: []})
+    if(!(localStorage.getItem('user'))){
+      return alert("Please login to Search")
+    }
+
     event.preventDefault();
+    
+    // GITHUB JOBS
     API.getGithubJobs(this.state.jobTitle, this.state.jobLocation)
       .then(res => {
-        this.setState({ jobs: res.data })
-        console.log(this.state.jobs)
+        var joined = this.state.jobs.concat(res.data);
+        this.setState({ jobs: joined })
       })
       .catch(err => console.log(err));
-  };
-
-  handleIndeedSubmit = event => {
-    // When the form is submitted, prevent its default behavior, get recipes update the recipes state
-    event.preventDefault();
-    API.getIndeedJobs(this.state.jobTitle, this.state.jobLocation)
-      .then(res => {
-        this.setState({ jobs: res.data })
-        console.log(this.state.jobs)
-      })
-      .catch(err => console.log(err));
-  };
-
-  handleZiprecruiterSubmit = event => {
-    // When the form is submitted, prevent its default behavior, get recipes update the recipes state
-    event.preventDefault();
-    API.getZiprecruiterJobs(this.state.jobTitle, this.state.jobLocation)
-      .then(res => {
-        this.setState({ jobs: res.data })
-        console.log(this.state.jobs)
-        console.log("response data", res.data)
-      })
-      .catch(err => console.log(err));
-  };
-
-  handleMonsterSubmit = event => {
-    // When the form is submitted, prevent its default behavior, get recipes update the recipes state
-    event.preventDefault();
-    API.getMonsterJobs(this.state.jobTitle, this.state.jobLocation)
-      .then(res => {
-        this.setState({ jobs: res.data })
-        console.log(this.state.jobs)
-      })
-      .catch(err => console.log(err));
-  };
-
-  handleUSAJobsSubmit = event => {
-    // When the form is submitted, prevent its default behavior, get recipes update the recipes state
-    event.preventDefault();
-    API.getUSAJobs(this.state.jobTitle, this.state.jobLocation)
-      .then(res => {
-        // console.log("response data",res)
-        this.setState({ jobs: res.data })
-        // console.log(this.state.jobs)
-      })
-      .catch(err => console.log(err));
-  };
-  
-  handleGlassdoorSubmit = event => {
-    // When the form is submitted, prevent its default behavior, get recipes update the recipes state
-    event.preventDefault();
-    console.log(this.state.jobTitle)
-    API.getGlassdoorJobs(this.state.jobTitle)
-      .then(res => {
-        console.log("response data",res.data)
-        this.setState({ jobs: res.data })
-        // console.log(this.state.jobs)
-      })
-      .catch(err => console.log(err));
-  };
-  
-  // When the form is submitted, prevent its default behavior, get recipes update the recipes state
-  handleSimplyhiredSubmit = event => {
-    event.preventDefault();
-    console.log(this.state.jobTitle)
+    // SIMPLYHIRED JOBS
     API.getSimplyhiredJobs(this.state.jobTitle, this.state.jobLocation)
       .then(res => {
-        console.log("response data",res.data)
-        this.setState({ jobs: res.data })
-        // console.log(this.state.jobs)
+        var joined = this.state.jobs.concat(res.data);
+        this.setState({ jobs: joined })
       })
       .catch(err => console.log(err));
-  };
+    // Indeed JOBS
+    API.getIndeedJobs(this.state.jobTitle, this.state.jobLocation)
+      .then(res => {
+        var joined = this.state.jobs.concat(res.data);
+        this.setState({ jobs: joined })
+      })
+      .catch(err => console.log(err));
+    // MONSTER JOBS
+    API.getMonsterJobs(this.state.jobTitle, this.state.jobLocation)
+      .then(res => {
+        var joined = this.state.jobs.concat(res.data);
+        this.setState({ jobs: joined })
+      })
+      .catch(err => console.log(err));
+    // USA JOBS
+    API.getUSAJobs(this.state.jobTitle, this.state.jobLocation)
+      .then(res => {
+        var joined = this.state.jobs.concat(res.data);
+        this.setState({ jobs: joined })
+      })
+      .catch(err => console.log(err));
+    // GLASSDOOR JOBS
+    API.getGlassdoorJobs(this.state.jobTitle, this.state.jobLocation)
+      .then(res => {
+        var joined = this.state.jobs.concat(res.data);
+        this.setState({ jobs: joined })
+      })
+      .catch(err => console.log(err));
+  }
+
 
   render() {
     return (
@@ -132,55 +103,13 @@ class Search extends Component {
                       />
                     </Col>
                     <Col size="xs-3 sm-2">
-                      {/* Search in Github */}
+                      {/* HANDLE ALL SEARCH API */}
                       <Button
-                        onClick={this.handleGithubSubmit}
-                        type="success"
-                        className="input-lg"
+                      onClick={this.handleSearch}
+                      type="success"
+                      className="btn btn-secondary"
                       >
-                        Search Github
-                      </Button>
-                      {/* Search in SimplyHired */}
-                      <Button
-                        onClick={this.handleSimplyhiredSubmit}
-                        type="success"
-                        className="input-lg"
-                      >
-                        Search SimplyHired
-                      </Button>
-                      {/* Search in Indeed */}
-                      <Button
-                        onClick={this.handleIndeedSubmit}
-                        type="success"
-                        className="input-lg"
-                      >
-                        Search Indeed
-                      </Button>
-                      {/* Search in Monster */}
-                      <Button
-                        onClick={this.handleMonsterSubmit}
-                        type="success"
-                        className="input-lg"
-                      >
-                        Search Monster
-                      </Button>
-
-                      {/* Search in USAJobs */}
-                      <Button
-                        onClick={this.handleUSAJobsSubmit}
-                        type="success"
-                        className="input-lg"
-                      >
-                        Search USA Jobs
-                      </Button>
-
-                      {/* Search in Glassdoor */}
-                      <Button
-                        onClick={this.handleGlassdoorSubmit}
-                        type="success"
-                        className="input-lg"
-                      >
-                        Search Glassdoor
+                        Search Jobs
                       </Button>
                     </Col>
                   </Row>
@@ -188,8 +117,10 @@ class Search extends Component {
               </form>
             </Col>
           </Row>
-          <Row>
-            <Col size="xs-12">
+          <Row >
+            <div >
+              <Col size="xs-12" >
+              {/* Beginning of Job List Display */}
               {!this.state.jobs.length ? (
                 <h1 className="text-center">No Jobs to Display</h1>
               ) : (
@@ -206,12 +137,15 @@ class Search extends Component {
                         thumbnail={job.company_logo}
                         location={job.location}
                         salary={job.salary}
+                        provider={job.provider}
                       />
                     );
                   })}
                 </JobList>
               )}
-            </Col>
+              </Col>
+            </div>
+            
           </Row>
         </Container>
       </div>

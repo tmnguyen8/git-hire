@@ -12,7 +12,7 @@ class Profile extends Component {
         
         return(
             <div className="card">
-                <p>{userInfo.username}</p>
+                <p className="pro-card">{userInfo.username}</p>
                  
                 <img src={userInfo.photos[0].value} />
                 

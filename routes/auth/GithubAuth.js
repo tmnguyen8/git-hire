@@ -51,30 +51,25 @@ app.use(require('cookie-parser')());
 app.use(require('body-parser').urlencoded({ extended: true }));
 app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
 
-// app.get("/github", 
-//     passport.authenticate("github")
-// );
-
 app.get("/github", passport.authenticate("github"))
 
-app.get(
-  "/github/callback",
+app.get("/github/callback",
   passport.authenticate("github"),
   (req, res) => {
-    console.log('user after callback', user);
+    // console.log('user after callback', user);
     res.redirect('/login')
   }
 );
 
 app.get("/github/profile", (req, res) => {
-    console.log('user:', user);
-    console.log("getting user data!");
+    // console.log('user:', user);
+    // console.log("getting user data!");
     res.send(user)
 })
 
 
 app.get("/logout", (req, res) => {
-  console.log("logging out!");
+  // console.log("logging out!");
   user = {};
   res.redirect("/");
 });
