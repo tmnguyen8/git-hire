@@ -62,53 +62,13 @@ import GlobalContext from "../../Context/globalContext";
 //         // if (this.state.user === false) {
 //         //     return <Redirect to='/login' />
 //         // }
-
-        return (
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <Link className="navbar-brand" to="/">
-                    <img src="https://raw.githubusercontent.com/tmnguyen8/git-hire/master/client/src/images/Git Hire Logo.png" alt="banner" className="brand-logo"></img>
-                </Link>
-//                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-//                     <span className="navbar-toggler-icon"></span>
-//                 </button>
-//                 <div className="collapse navbar-collapse" id="navbarColor03">
-//                     <ul className="navbar-nav mr-auto">
-//                         <li className="nav-item">
-//                             <Link to="/">Git-Hire
-//                             </Link>
-//                         </li>
-                
-//                     </ul>
-        
-//                     <ul className="list-inline">
-//                         <li className="list-inline-item">
-//                             <button className="btn btn-primary"  onClick={this.getAccount} type="submit">Account</button>
-//                         </li>
-//                         <li className="list-inline-item">
-//                             <Link className="btn btn-primary" to="/login">Login</Link>
-//                         </li>
-//                         <li className="list-inline-item">
-//                             <button className="btn btn-primary " onClick={this.handleGithubLogout} type="submit">logout</button>
-//                         </li>
-//                     </ul>
-        
-//                 </div>
-//             </nav>
-//         );
-//     }
-    
-// }
-// // Nav.contextType = GlobalContext;
-
-// export default Nav;
-
 function NavContext() {
     return (
         <GlobalContext.Consumer>
             {state => (
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <Link className="navbar-brand" to="/">
-                        <img src="https://raw.githubusercontent.com/tmnguyen8/git-hire/master/client/src/images/job.png" alt="banner" className="brand-logo"></img>
+                        <img src="https://raw.githubusercontent.com/tmnguyen8/git-hire/master/client/src/images/Git Hire Logo.png" alt="banner" className="brand-logo"></img>
                     </Link>
 
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
