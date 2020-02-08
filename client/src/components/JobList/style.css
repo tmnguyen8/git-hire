@@ -1,0 +1,6 @@
+.list-group {
+    padding: 15px;
+    background-image: url("../images/white background.jpg");
+    box-shadow: -10px 5px 20px rgb(20, 20, 20);
+    border-radius: 25px;
+}

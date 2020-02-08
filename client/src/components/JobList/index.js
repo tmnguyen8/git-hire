@@ -6,6 +6,7 @@ import Button from "../Button";
 import API from "../../utils/API";
 import StatusBar from "../StatusBar";
 import DropdownButton from "react-bootstrap/DropdownButton";
+import "./style.css";
 
 // Exporting both JobList and JobListItem from this file
 

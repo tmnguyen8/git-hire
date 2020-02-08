@@ -66,7 +66,7 @@ function NavContext() {
     return (
         <GlobalContext.Consumer>
             {state => (
-                <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <nav className="navbar navbar-expand-lg">
                     <Link className="navbar-brand" to="/">
                         <img src="https://raw.githubusercontent.com/tmnguyen8/git-hire/master/client/src/images/Git Hire Logo.png" alt="banner" className="brand-logo"></img>
                     </Link>
