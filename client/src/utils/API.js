@@ -50,6 +50,13 @@ export default {
     return axios.delete("/api/savedJob" , {params:{
       favJobID:favJobID
     }})
+  },
+  updateJobStatus: function(favJobID, status) {
+    // console.log([favJobID, status])
+    return axios.put("/api/updatejob", {params:{
+      favJobID: favJobID,
+      status: status
+    }})
   }
 
 
