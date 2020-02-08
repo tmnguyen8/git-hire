@@ -62,6 +62,17 @@ import GlobalContext from "../../Context/globalContext";
 //         // if (this.state.user === false) {
 //         //     return <Redirect to='/login' />
 //         // }
+const localhostUser = JSON.parse(localStorage.getItem("user"))
+
+function isEmpty (obj) {
+    for(var prop in obj) {
+        if(obj.hasOwnProperty(prop)) {
+            return false;
+        }
+    }
+    return JSON.stringify(obj) === JSON.stringify({});
+}
+
 function NavContext() {
     return (
         <GlobalContext.Consumer>
@@ -81,13 +92,28 @@ function NavContext() {
             
                         <ul className="list-inline">
                             <li className="list-inline-item">
-                                <Link className="btn btn-primary"  to="/account">Account</Link>
+                                {(!isEmpty(localhostUser) && localhostUser!==null)? 
+                                    <Link className="btn btn-primary"  to="/account">Account</Link>
+                                    : 
+                                    <div></div>
+                                }
                             </li>
+
                             <li className="list-inline-item">
-                                <Link className="btn btn-primary" to="/login">Login</Link>
+                                {(!isEmpty(localhostUser) && localhostUser!==null)? 
+                                    <div></div>
+                                    : 
+                                    <Link className="btn btn-primary" to="/login">Login</Link>
+                                    
+                                }
                             </li>
+
                             <li className="list-inline-item">
-                                <button className="btn btn-primary" onClick={state.handleGithubLogout} type="submit">Logout</button>
+                                {(!isEmpty(localhostUser) && localhostUser!==null)? 
+                                    <button className="btn btn-primary" onClick={state.handleGithubLogout} type="submit">Logout</button>
+                                    : 
+                                    <div></div>
+                                }
                             </li>
                         </ul>
                     </div>
