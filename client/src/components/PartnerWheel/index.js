@@ -6,36 +6,36 @@ class index extends Component {
         return (
             <div>
 
-<div id="demo" class="carousel slide" data-ride="carousel">
+                {/* Change class to className breaks the carousel, not sure whyt */}
+                
+                <div class="carousel slide" data-ride="carousel">
 
-  
-  <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"></li>
-    <li data-target="#demo" data-slide-to="2"></li>
-  </ul>
-  
- 
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="https://www.coca-colaindia.com/content/dam/journey/in/en/private/stories/history/the_logo_story_01122014_596x334.rendition.320.179.jpg" alt="github-logo" width="1100" height="500"/>
-    </div>
-    <div class="carousel-item">
-      <img src="client\src\components\PartnerWheel\logos\glassdoor-logo.png" alt="Chicago" width="1100" height="500"/>
-    </div>
-    <div class="carousel-item">
-      <img src="ny.jpg" alt="New York" width="1100" height="500"/>
-    </div>
-  </div>
-  
-  
-  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
-</div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img src="https://raw.githubusercontent.com/tmnguyen8/git-hire/master/client/src/components/PartnerWheel/logos/github-logo.png" alt="github-logo" width="550" height="500"/>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://raw.githubusercontent.com/tmnguyen8/git-hire/master/client/src/components/PartnerWheel/logos/glassdoor-logo.png" alt="glassdoor-logo" width="550" height="500"/>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://raw.githubusercontent.com/tmnguyen8/git-hire/master/client/src/components/PartnerWheel/logos/indeed.png" alt="indeed-logo" width="550" height="500"/>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://raw.githubusercontent.com/tmnguyen8/git-hire/master/client/src/components/PartnerWheel/logos/monster-app-logo.png" alt="monster-jobs-logo" width="550" height="500"/>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://raw.githubusercontent.com/tmnguyen8/git-hire/master/client/src/components/PartnerWheel/logos/simply-logo.png" alt="simply-hire-logo" width="550" height="500"/>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://raw.githubusercontent.com/tmnguyen8/git-hire/master/client/src/components/PartnerWheel/logos/usa-jobs.png" alt="usa-jobs-logo" width="550" height="500"/>
+                </div>
+                </div>
+            </div>
             </div>
         );
     }
