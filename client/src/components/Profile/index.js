@@ -1,7 +1,7 @@
-import React, { Component } from "react"
+import React, {Component} from "react"
 import "./style.css";
-import Account from "../../Pages/Account/Account"
-import Auth from "../../utils/Auth"
+import GlobalContext from "../../Context/globalContext";
+
 
 
 class Profile extends Component {
@@ -9,9 +9,9 @@ class Profile extends Component {
     // Check if the object is empty
     isEmpty = (obj) =>{
         for(var prop in obj) {
-        if(obj.hasOwnProperty(prop)) {
-            return false;
-        }
+            if(obj.hasOwnProperty(prop)) {
+                return false;
+            }
         }
         return JSON.stringify(obj) === JSON.stringify({});
     }
@@ -30,7 +30,7 @@ class Profile extends Component {
             return (
                 <div className="card">
                     <p>{userInfo.username}</p>
-                    <img src={userInfo.photos[0].value} />
+                    <img src={userInfo._json.avatar_url} />
                     <a href={userInfo.profileUrl}>Github</a>
                 </div>
                 
@@ -42,3 +42,21 @@ class Profile extends Component {
 
 
 export default Profile;
+
+
+// function Profile() {
+//     return (
+//         <GlobalContext.Consumer>
+//             {state => (
+//                 <div className="card">
+//                     <p>{state.user.username}</p>
+//                     <img src={state.user._json.avatar_url} atl="github url"/>
+//                     <a href={state.user.profileUrl}>Github</a>
+//                 </div>
+//             )
+//             }
+//         </GlobalContext.Consumer>
+//     )
+// }
+
+// export default Profile;

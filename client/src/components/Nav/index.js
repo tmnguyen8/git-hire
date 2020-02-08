@@ -81,7 +81,7 @@ function NavContext() {
             
                         <ul className="list-inline">
                             <li className="list-inline-item">
-                                <button className="btn btn-primary"  onClick={state.getAccount} type="submit">Account</button>
+                                <Link className="btn btn-primary"  to="/account">Account</Link>
                             </li>
                             <li className="list-inline-item">
                                 <Link className="btn btn-primary" to="/login">Login</Link>
