@@ -11,6 +11,7 @@ import Login from "./Pages/Login";
 import GlobalContext from "./Context/globalContext";
 import Auth from "./utils/Auth";
 import Nav from "./components/Nav";
+import "./App.css";
 // import JobAccount from "./Pages/JobAccount";
 
 
