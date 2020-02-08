@@ -1,6 +1,8 @@
 import React, {Component} from "react";
+import Button from "../Button";
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import API from "../../utils/API";
+import "./style.css";
 
 // function StatusBar(props) {
 //   console.log(props)
@@ -37,14 +39,16 @@ class StatusBar extends Component {
   render() {
     return (
       <div>
+      <div className= "status-bar">
         <select id="lang" onChange={this.handleSelect} value={this.state.selectedStatus}>
-          <option value="Saved Not Applied">Saved Not Applied</option>
+          <option value="Saved Not Applied">Not Applied</option>
           <option value="Applied">Applied</option>
           <option value="Interviewing">Interviewing</option>
           <option value="Offered">Offered</option>
           <option value="Rejected">Rejected</option>
         </select>
-        <buton className="btn btn-primary" onClick={this.handleUpdateStatus}>Update Job Status</buton>
+        </div>
+        <Button className="btn" onClick={this.handleUpdateStatus}>Update Status</Button>
       </div>
     )
   }
