@@ -19,5 +19,6 @@ nav.btn {
 } 
 
 .navbar {
-  background-image: url("../images/white background.jpg");  
+  box-shadow: 0px 2px 20px rgb(20, 20, 20);
+  background-color: rgba(158, 158, 158, 0.5);
 }
