@@ -63,7 +63,7 @@ class Login extends React.Component {
         <Nav/>
         <div className="container">
           <h1>Please Login Using the following Authentication</h1>
-          <button className="btn btn-primary"  onClick={this.handleLoginGithub}>Login with Github</button>
+          <button className="btn btn-primary"  onClick={this.handleLoginGithub.then(this.getAccount)}>Login with Github</button>
         </div>
       </div>
     );

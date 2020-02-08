@@ -31,7 +31,19 @@ router.delete("/savedJob", (req, res)=>{
         .then(dbModel => dbModel.remove())
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err))
-})
+});
+
+router.put("/updatejob", (req,res)=>{
+    // console.log("testing", req.body.params.favJobID)
+    // console.log("testing", req.body.params.status)
+    db.SavedJobs
+        .update(
+            {_id: req.body.params.favJobID},
+            {$set: {"status": req.body.params.status}}
+        )
+        .then(dbModel => console.log(dbModel))
+        .catch(err => res.status(422).json(err))
+});
 
 
 

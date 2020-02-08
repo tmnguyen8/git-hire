@@ -76,21 +76,18 @@ function NavContext() {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarColor03">
                         <ul className="navbar-nav mr-auto">
-                            <li className="nav-item">
-                                <Link to="/">Git-Hire</Link>
-                            </li>
-                    
+                            <h1 className= "welcome-message">Welcome to GitHire {state.user.username}!</h1>
                         </ul>
             
                         <ul className="list-inline">
                             <li className="list-inline-item">
-                                <button className="btn-primary"  onClick={state.getAccount} type="submit">Account</button>
+                                <button className="btn btn-primary"  onClick={state.getAccount} type="submit">Account</button>
                             </li>
                             <li className="list-inline-item">
-                                <Link className="btn-primary" to="/login">Login</Link>
+                                <Link className="btn btn-primary" to="/login">Login</Link>
                             </li>
                             <li className="list-inline-item">
-                                <button className="btn-primary " onClick={state.handleGithubLogout} type="submit">Logout</button>
+                                <button className="btn btn-primary" onClick={state.handleGithubLogout} type="submit">Logout</button>
                             </li>
                         </ul>
                     </div>

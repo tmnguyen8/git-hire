@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 .list-group {
     padding: 15px;
     background-image: url("../images/white background.jpg");
     box-shadow: -10px 5px 20px rgb(20, 20, 20);
     border-radius: 25px;
+}
+.custom-button {
+    background: rgb(167, 167, 167);
+}
+.custom-button:hover {
+    background: rgb(66, 66, 66);
 }
