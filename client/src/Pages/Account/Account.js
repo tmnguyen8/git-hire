@@ -5,7 +5,7 @@ import { JobList, JobListItem } from "../../components/JobList";
 import { Container, Row, Col } from "../../components/Grid";
 import Profile from "../../components/Profile";
 import { FavListItem, FavList } from "../../components/FavList";
-import AccountStat from "../../components/Stats";
+import JobStats from "../../components/JobStats";
 
 
 
@@ -68,7 +68,7 @@ const JobAccount = () => {
         </div>
 
         <div className="col-2">
-        
+            <JobStats/>
         </div>
         
       </Row>

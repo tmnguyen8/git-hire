@@ -29,6 +29,7 @@ class Home extends React.Component {
       <div>
         <Search />
         <PartnerWheel />
+        
       </div>
     );
   }
