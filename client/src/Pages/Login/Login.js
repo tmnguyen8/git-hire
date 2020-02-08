@@ -79,13 +79,22 @@ function LoginContext() {
     <GlobalContext.Consumer>
       {state=>(
         <div className="container">
-          <h1>Please Login using the following Authentication</h1>
-          <button
-            className="btn btn-primary"
-            onClick={state.handleGithubLogin}
-          >
-            Login with Github
-          </button>
+          <h4>Please Login using the following Authentication Steps</h4>
+          <div className="list-group">
+              <button
+                className="btn btn-primary list-group-item list-group-item-action active"
+                onClick={state.handleGithubLogin}
+              >
+                Step 1: Login with Github
+              </button>
+
+              <button
+                className="btn btn-primary list-group-item list-group-item-action"
+                onClick={state.getAccount}
+              >
+                Step 2: Get Github Profile
+              </button>
+          </div>
         </div>
       )}
     </GlobalContext.Consumer>

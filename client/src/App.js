@@ -31,20 +31,23 @@ class App extends React.Component {
         this.setState({user: false})
         localStorage.removeItem("user")
       })
+      .then(()=>{
+        window.location.href="/login"
+      })
       .catch(err=>console.log(err))
   };
 
   // Getting Github Account information
   getAccount = () =>{
-      console.log(this.state.user)
-      console.log((this.isEmpty(this.state.user)))
+      // console.log(this.state.user)
+      // console.log((this.isEmpty(this.state.user)))
       Auth.getGithubAccount()
         .then((res)=>{
           this.setState({user: res.data})
           localStorage.setItem("user", JSON.stringify(this.state.user))
+          console.log(this.state.user)
         })
         .then(()=>{
-          console.log("test")
           if (this.state.user && (this.isEmpty(this.state.user))){
             window.location.href="/login"
             // this.props.history.push('/account')
