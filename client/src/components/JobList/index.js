@@ -77,8 +77,10 @@ export function JobListItem({
     <li className="list-group-item">
       <Container>
         <Row>
-          <Col size="xs-4 sm-2">
+
+          <Col size="xs-2 sm-2">
             <Thumbnail src={company_logo? company_logo:thumbnail} />
+
           </Col>
           <Col size="xs-7 sm-8">
             <h3>{title}</h3>

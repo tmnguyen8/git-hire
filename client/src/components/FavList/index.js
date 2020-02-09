@@ -63,7 +63,7 @@ export function FavListItem({
             <div>Provider: {provider}</div>
             <div>Company: {company}</div>
             <div>Location: {location}</div>
-            <div> {description? `Description: ${description}`: null} </div>
+            <div className="description-text"> {description? `Description: ${description}`: null} </div>
             <div> {salary? `Salary: ${salary}`: null} </div>
             <div> {status? `My Job Status: ${status}`: null} </div>
             <a rel="noreferrer noopener" target="_blank" href={href}>
