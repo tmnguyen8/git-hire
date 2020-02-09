@@ -3,6 +3,7 @@ import React from "react";
 import GlobalContext from "../../Context/globalContext";
 import Auth from "../../utils/Auth"
 import Nav from "../../components/Nav";
+import "./login.css"
 
 class Login extends React.Component { 
   // constructor( props ){
@@ -78,9 +79,11 @@ function LoginContext() {
   return (
     <GlobalContext.Consumer>
       {state=>(
-        <div className="container">
+        <div className="container login-container">
           <h4>Please Login using the following Authentication Steps</h4>
-          <div className="list-group">
+          <img src="https://raw.githubusercontent.com/tmnguyen8/git-hire/master/client/src/components/PartnerWheel/logos/github-logo.png" alt="github logo"/>
+          
+          <div className="list-group login-list">
               <button
                 className="btn btn-primary list-group-item list-group-item-action active"
                 onClick={state.handleGithubLogin}

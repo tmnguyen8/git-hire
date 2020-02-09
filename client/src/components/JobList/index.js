@@ -46,7 +46,7 @@ export function JobListItem({
   location, 
   description,
   salary,
-  href,
+  url,
   id,
   provider,
   company_logo
@@ -66,7 +66,7 @@ export function JobListItem({
     location, 
     description,
     salary,
-    href,
+    url,
     id,
     username,
     provider,
@@ -82,19 +82,19 @@ export function JobListItem({
             <Thumbnail src={company_logo? company_logo:thumbnail} />
 
           </Col>
-          <Col size="xs-7 sm-8">
+          <Col size="xs-7 sm-7">
             <h3>{title}</h3>
             <div>Provider: {provider}</div>
             <div>Company: {company}</div>
             <div>Location: {location}</div>
             <div className="description-text"> {description? `Description: ${description}`: null} </div>
             <div> {salary? `Salary: ${salary}`: null} </div>
-            <a rel="noreferrer noopener" target="_blank" href={href}>
+            <a rel="noreferrer noopener" target="_blank" href={url}>
               Go to job!
             </a>
           </Col>
-          <Col size="xs-1 sm-1">
-          <Button className= "btn-lg custom-button" key={id} onClick={()=> jobSaveButtonClick(svdJobData)}>Save</Button>
+          <Col size="xs-3 sm-3">
+            <Button className= "btn-lg custom-button" key={id} onClick={()=> jobSaveButtonClick(svdJobData)}>Save</Button>
           </Col>
         </Row>
       </Container>

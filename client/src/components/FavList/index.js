@@ -5,6 +5,7 @@ import placeholderImage from "../../images/notfoundlogo.png";
 import Button from "../Button";
 import API from "../../utils/API";
 import StatusBar from "../StatusBar";
+import "./style.css";
 
 // Exporting both JobList and JobListItem from this file
 
@@ -29,7 +30,7 @@ export function FavListItem({
   location, 
   description,
   salary,
-  href,
+  url,
   id,
   provider,
   status
@@ -44,7 +45,7 @@ export function FavListItem({
     location, 
     description,
     salary,
-    href,
+    url,
     id,
     username,
     provider,
@@ -52,13 +53,13 @@ export function FavListItem({
   }
 
   return (
-    <li className="list-group-item">
+    <li className="list-group-item fav-job-list">
       <Container>
         <Row>
-          <Col size="xs-4 sm-2">
+          <Col size="xs-3 sm-2">
             <Thumbnail src={thumbnail} />
           </Col>
-          <Col size="xs-7 sm-8">
+          <Col size="xs-8 sm-8">
             <h3>{title}</h3>
             <div>Provider: {provider}</div>
             <div>Company: {company}</div>
@@ -66,11 +67,11 @@ export function FavListItem({
             <div className="description-text"> {description? `Description: ${description}`: null} </div>
             <div> {salary? `Salary: ${salary}`: null} </div>
             <div> {status? `My Job Status: ${status}`: null} </div>
-            <a rel="noreferrer noopener" target="_blank" href={href}>
+            <a rel="noreferrer noopener" target="_blank" href={url}>
               Go to job!
             </a>
           </Col>
-          <Col size="xs-1 sm-1">
+          <Col size="xs-1 sm-2">
           <Button className ="btn btn-lg custom-button" key={id} onClick={()=> rmvButtonClick(svdJobData)}>Remove</Button>
           <StatusBar 
           key={id}
