@@ -4,7 +4,7 @@ import "./style.css";
 class index extends Component {
     render() {
         return (
-            <div>
+            <div className="carousel-container">
 
                 {/* Change class to className breaks the carousel, not sure whyt */}
                 

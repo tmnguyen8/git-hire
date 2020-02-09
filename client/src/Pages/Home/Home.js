@@ -5,7 +5,6 @@ import GlobalContext from "../../Context/globalContext";
 import Nav from "../../components/Nav";
 import Search from "../../components/Search";
 import "./home.css"
-import PartnerWheel from "../../components/PartnerWheel";
 
 class Home extends React.Component {
   
@@ -28,7 +27,6 @@ class Home extends React.Component {
     return (
       <div>
         <Search />
-        <PartnerWheel />
       </div>
     );
   }
