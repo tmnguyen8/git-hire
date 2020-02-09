@@ -130,7 +130,7 @@ class Search extends Component {
                         key={job.id}
                         id={job.id}
                         title={job.title}
-                        href={job.url}
+                        url={job.url}
                         company={job.company}
                         description={job.description}
                         thumbnail={job.company_logo}

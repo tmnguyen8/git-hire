@@ -81,41 +81,43 @@ function NavContext() {
                     <Link className="navbar-brand" to="/">
                         <img src="https://raw.githubusercontent.com/tmnguyen8/git-hire/master/client/src/images/Git Hire Logo.png" alt="banner" className="brand-logo"></img>
                     </Link>
-
+                    <h1 className= "welcome-message">Welcome to GitHire {state.user.username}!</h1>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarColor03">
                         <ul className="navbar-nav mr-auto">
-                            <h1 className= "welcome-message">Welcome to GitHire {state.user.username}!</h1>
+                            
                         </ul>
-            
-                        <ul className="list-inline">
-                            <li className="list-inline-item">
-                                {(!isEmpty(localhostUser) && localhostUser!==null)? 
-                                    <Link className="btn btn-primary"  to="/account">Account</Link>
-                                    : 
-                                    <div></div>
-                                }
-                            </li>
+                        <div className="navbar-button">
+                            <ul className="list-inline">
+                                <li className="list-inline-item">
+                                    {(!isEmpty(localhostUser) && localhostUser!==null)? 
+                                        <Link className="btn btn-primary"  to="/account">Account</Link>
+                                        : 
+                                        <div></div>
+                                    }
+                                </li>
 
-                            <li className="list-inline-item">
-                                {(!isEmpty(localhostUser) && localhostUser!==null)? 
-                                    <div></div>
-                                    : 
-                                    <Link className="btn btn-primary" to="/login">Login</Link>
-                                    
-                                }
-                            </li>
+                                <li className="list-inline-item">
+                                    {(!isEmpty(localhostUser) && localhostUser!==null)? 
+                                        <div></div>
+                                        : 
+                                        <Link className="btn btn-primary" to="/login">Login</Link>
+                                        
+                                    }
+                                </li>
 
-                            <li className="list-inline-item">
-                                {(!isEmpty(localhostUser) && localhostUser!==null)? 
-                                    <button className="btn btn-primary" onClick={state.handleGithubLogout} type="submit">Logout</button>
-                                    : 
-                                    <div></div>
-                                }
-                            </li>
-                        </ul>
+                                <li className="list-inline-item">
+                                    {(!isEmpty(localhostUser) && localhostUser!==null)? 
+                                        <button className="btn btn-primary" onClick={state.handleGithubLogout} type="submit">Logout</button>
+                                        : 
+                                        <div></div>
+                                    }
+                                </li>
+                            </ul>
+                        </div>
+                        
                     </div>
                 </nav>
             )}

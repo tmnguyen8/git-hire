@@ -38,7 +38,7 @@ const JobAccount = () => {
           <JobStats/>
         </div>
         
-        <div className="col-sm-12 col-md-8 col-lg-8">
+        <div className="col-sm-12 col-md-10 col-lg-10">
 
           <div className="container">
             {!state.favJobList.length ? (
@@ -51,7 +51,7 @@ const JobAccount = () => {
                         key={job._id}
                         id={job._id}
                         title={job.title}
-                        href={job.url}
+                        url={job.url}
                         company={job.company}
                         description={job.description}
                         thumbnail={job.company_logo}
