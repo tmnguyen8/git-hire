@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import { Container, Row, Col } from "../../components/Grid";
 import "./style.css";
+import Button from "../Button";
 
 
 class JobStats extends Component {
@@ -66,17 +67,17 @@ class JobStats extends Component {
     }
     render () {
       return (
-          <div className="container-fluid list-group">
-            <button onClick={this.handleRefresh}>Refresh</button>
-            <h6>Job Statistics</h6>
+          <div className="job-stat-container container-fluid list-group">
+            <Button className="refresh-btn" onClick={this.handleRefresh}>Refresh</Button>
+            <h6 className="job-status-text">Job Statistics</h6>
             {
              this.state.favJobList.length>0?
               <div classname="container">
-                <p className="job-status list-group-item">Not Applied: {this.state.statusNotApplied}</p>
-                <p className="job-status list-group-item">Applied: {this.state.statusApplied}</p>
-                <p className="job-status list-group-item">Interviewed: {this.state.statusInterviewed}</p>
-                <p className="job-status list-group-item">Offered: {this.state.statusOffered}</p>
-                <p className="job-status list-group-item">Rejected: {this.state.statusRejected}</p>
+                <p className="job-status list-group-item napl">Not Applied: {this.state.statusNotApplied}</p>
+                <p className="job-status list-group-item apl">Applied: {this.state.statusApplied}</p>
+                <p className="job-status list-group-item itv">Interviewed: {this.state.statusInterviewed}</p>
+                <p className="job-status list-group-item ofr">Offered: {this.state.statusOffered}</p>
+                <p className="job-status list-group-item rjc">Rejected: {this.state.statusRejected}</p>
               </div>
               :
               <div>

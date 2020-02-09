@@ -28,10 +28,10 @@ class Profile extends Component {
             )
         } else {
             return (
-                <div className="list-group">
+                <div className="card-container list-group">
                     <div className="card">
-                        <p>{userInfo.username}</p>
-                        <img src={userInfo._json.avatar_url} />
+                        <p className="username-text">{userInfo.username}</p>
+                        <img className="user-image" src={userInfo._json.avatar_url} />
                         <a href={userInfo.profileUrl}>Github</a>
                     </div>
                 </div>
