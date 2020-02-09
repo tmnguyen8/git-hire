@@ -35,6 +35,15 @@
     .list-inline {
         padding-left: 40%;
     }
+    .accountinfo-header {
+        text-align: center;
+    }
+    .savedjobs-header{
+        text-align: center;
+    }
+    .job-stats{
+        text-align: center;
+    }
 }
 @media screen and (max-width: 425px) {
     .container {
