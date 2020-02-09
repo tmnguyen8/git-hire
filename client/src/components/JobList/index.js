@@ -8,17 +8,34 @@ import StatusBar from "../StatusBar";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import "./style.css";
 
-// Exporting both JobList and JobListItem from this file
 
+// Exporting both JobList and JobListItem from this file
 // JobList renders a bootstrap list item
 export function JobList({ children }) {
-  
   return <ul className="list-group">{children}</ul>;
 }
 
+export function isEmpty (obj) {
+  for(var prop in obj) {
+      if(obj.hasOwnProperty(prop)) {
+          return false;
+      }
+  }
+  return JSON.stringify(obj) === JSON.stringify({});
+}
+
 export function jobSaveButtonClick(svdJobData) {
-  API.postSavedJob(svdJobData)
-  console.log("this is username: "+svdJobData.username)
+  const localhostUser = JSON.parse(localStorage.getItem("user"))
+
+  if (!isEmpty(localhostUser) && localhostUser!==null) {
+    API.postSavedJob(svdJobData)
+    .then(()=>{
+      alert(`Job ${svdJobData.title} is added to favorite`)
+    })
+    .catch(err=>console.log(err))
+  } else {
+    alert("Please login first to save job.")
+  }
 }
 
 // JobListItem renders a bootstrap list item containing data from the recipe api call
@@ -31,10 +48,16 @@ export function JobListItem({
   salary,
   href,
   id,
-  provider
+  provider,
+  company_logo
 }) {
-  const profile = JSON.parse(localStorage.getItem('user'))
-  const username = profile.username
+
+  if (JSON.parse(localStorage.getItem('user'))===null) {
+    var username = null
+  } else {
+    var username = JSON.parse(localStorage.getItem('user')).username
+  }
+  
 
   const svdJobData = {
     thumbnail,
@@ -46,15 +69,18 @@ export function JobListItem({
     href,
     id,
     username,
-    provider
+    provider,
+    company_logo
   }
 
   return (
     <li className="list-group-item">
       <Container>
         <Row>
+
           <Col size="xs-2 sm-2">
-            <Thumbnail src={thumbnail} />
+            <Thumbnail src={company_logo? company_logo:thumbnail} />
+
           </Col>
           <Col size="xs-7 sm-8">
             <h3>{title}</h3>

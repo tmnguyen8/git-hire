@@ -28,9 +28,6 @@ class Search extends Component {
   
   handleSearch = (event) =>{
     this.setState({jobs: []})
-    if(!(localStorage.getItem('user'))){
-      return alert("Please login to Search")
-    }
 
     event.preventDefault();
     
@@ -81,8 +78,7 @@ class Search extends Component {
 
   render() {
     return (
-      <div>
-        <Checkbox/>        
+      <div>       
         <Container>
           <Row>
             <Col size="md-12">
@@ -139,6 +135,7 @@ class Search extends Component {
                         location={job.location}
                         salary={job.salary}
                         provider={job.provider}
+                        company_logo={job.company_logo}
                       />
                     );
                   })}
