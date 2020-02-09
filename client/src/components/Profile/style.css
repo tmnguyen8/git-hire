@@ -1,7 +1,7 @@
 .card {
     background: whitesmoke;
     border-radius: 2px;
-    max-height: 180px;
+    max-height: 190px;
     position: relative;
     max-width: 180px;
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
@@ -18,4 +18,10 @@
     color: rgb(4, 170, 162);
     font-size: 1.5vw;
     padding-top: 4px;
+  }
+
+  .card-container{
+    max-width: 200px;
+    max-height: 220px;
+    margin-left: 20%;
   }

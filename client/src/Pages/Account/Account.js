@@ -33,12 +33,12 @@ const JobAccount = () => {
     return(
       <Row>
 
-        <div className="col-sm-12 col-md-2 col-lg-2">
+        <div className="profile-div col-sm-12 col-md-2 col-lg-2">
           <Profile />
           <JobStats/>
         </div>
         
-        <div className="col-sm-12 col-md-10 col-lg-10">
+        <div className="fav-div col-sm-12 col-md-10 col-lg-10">
 
           <div className="container">
             {!state.favJobList.length ? (

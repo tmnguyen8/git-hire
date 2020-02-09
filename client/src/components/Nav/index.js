@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import "./style.css";
 import Auth from "../../utils/Auth";
 import GlobalContext from "../../Context/globalContext";
+import Button from "../Button";
 // import history from "../../history";
 
 // class Nav extends Component {
@@ -93,7 +94,7 @@ function NavContext() {
                             <ul className="list-inline">
                                 <li className="list-inline-item">
                                     {(!isEmpty(localhostUser) && localhostUser!==null)? 
-                                        <Link className="btn btn-primary"  to="/account">Account</Link>
+                                        <Button><Link className="account-btn"  to="/account">Account</Link></Button>
                                         : 
                                         <div></div>
                                     }
@@ -103,14 +104,14 @@ function NavContext() {
                                     {(!isEmpty(localhostUser) && localhostUser!==null)? 
                                         <div></div>
                                         : 
-                                        <Link className="btn btn-primary" to="/login">Login</Link>
+                                        <Button><Link className="login-btn" to="/login">Login</Link></Button>
                                         
                                     }
                                 </li>
 
                                 <li className="list-inline-item">
                                     {(!isEmpty(localhostUser) && localhostUser!==null)? 
-                                        <button className="btn btn-primary" onClick={state.handleGithubLogout} type="submit">Logout</button>
+                                        <Button className="logout-btn" onClick={state.handleGithubLogout} type="submit">Logout</Button>
                                         : 
                                         <div></div>
                                     }

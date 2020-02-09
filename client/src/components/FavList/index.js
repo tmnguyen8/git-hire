@@ -59,7 +59,7 @@ export function FavListItem({
           <Col size="xs-3 sm-2">
             <Thumbnail src={thumbnail} />
           </Col>
-          <Col size="xs-8 sm-8">
+          <Col size="xs-7 sm-7">
             <h3>{title}</h3>
             <div>Provider: {provider}</div>
             <div>Company: {company}</div>
@@ -71,7 +71,7 @@ export function FavListItem({
               Go to job!
             </a>
           </Col>
-          <Col size="xs-1 sm-2">
+          <Col size="xs-2 sm-2">
           <Button className ="btn btn-lg custom-button" key={id} onClick={()=> rmvButtonClick(svdJobData)}>Remove</Button>
           <StatusBar 
           key={id}
