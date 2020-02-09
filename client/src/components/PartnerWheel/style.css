@@ -1,6 +1,7 @@
-.carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-      width: 70%;
-      margin: auto;
-  }
+.carousel-inner img {
+    width: 75px;
+    height: 75px;
+    transition-duration: 4s;
+}
+
 
