@@ -123,7 +123,7 @@ class Search extends Component {
               <Col size="xs-12" >
               {/* Beginning of Job List Display */}
               {!this.state.jobs.length ? (
-                <h1 className="text-center">No Jobs to Display</h1>
+                <div></div>
               ) : (
                 <JobList>
                   {this.state.jobs.map(job => {
