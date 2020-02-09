@@ -6,7 +6,7 @@ import { Container, Row, Col } from "../../components/Grid";
 import Profile from "../../components/Profile";
 import { FavListItem, FavList } from "../../components/FavList";
 import JobStats from "../../components/JobStats";
-
+import "./account.css";
 
 
 const JobAccount = () => {
@@ -32,12 +32,12 @@ const JobAccount = () => {
     
     return(
       <Row>
-        <div className="col-2">
+        <div className="col-sm-12 col-md-2 col-lg-2">
           <h3>Account Info</h3>
           <Profile />
         </div>
 
-        <div className="col-8">
+        <div className="col-sm-12 col-md-8 col-lg-8">
           <h3>Saved Jobs</h3>
           <div className="container">
             {!state.favJobList.length ? (
@@ -67,7 +67,7 @@ const JobAccount = () => {
           </div>
         </div>
 
-        <div className="col-2">
+        <div className="job-stats col-sm-12 col-md-2 col-lg-2">
             <JobStats/>
         </div>
         
