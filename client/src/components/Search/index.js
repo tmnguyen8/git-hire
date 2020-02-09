@@ -8,6 +8,7 @@ import { JobList, JobListItem } from "../JobList";
 import { Container, Row, Col } from "../Grid";
 import Checkbox from "../Checkbox"; 
 import "./style.css";
+import PartnerWheel from "../PartnerWheel";
 
 class Search extends Component {
   state = {
@@ -78,7 +79,8 @@ class Search extends Component {
 
   render() {
     return (
-      <div>       
+      <div className="search-container"> 
+        <PartnerWheel/>
         <Container>
           <Row>
             <Col size="md-12">
