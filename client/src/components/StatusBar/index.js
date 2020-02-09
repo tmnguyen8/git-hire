@@ -43,7 +43,7 @@ class StatusBar extends Component {
         <select id="lang" onChange={this.handleSelect} value={this.state.selectedStatus}>
           <option value="Saved Not Applied">Not Applied</option>
           <option value="Applied">Applied</option>
-          <option value="Interviewing">Interviewing</option>
+          <option value="Interviewed">Interviewed</option>
           <option value="Offered">Offered</option>
           <option value="Rejected">Rejected</option>
         </select>

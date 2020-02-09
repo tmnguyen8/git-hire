@@ -1,13 +1,17 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { Container, Row, Col } from "../../components/Grid";
-
+import "./style.css";
 
 
 class JobStats extends Component {
     state = {
         favJobList: [],
-        statusApplied: 0
+        statusNotApplied: 0,
+        statusApplied: 0,
+        statusInterviewed: 0,
+        statusOffered: 0,
+        statusRejected: 0
     }
 
     isEmpty = (obj) => {
@@ -27,38 +31,59 @@ class JobStats extends Component {
           API.getSavedJobByUser(username)
           .then((res)=>{
             this.setState({favJobList: res.data});
-            console.log("this is from state", this.state.statusApplied)
           })
           .then(()=>{
-                var count = 0;
+                var countApplied = 0;
+                var countInterviewed = 0;
+                var countOffered = 0;
+                var countRejected = 0;
+                var countNotApplied = 0;
+
                 this.state.favJobList.map(favJob=>{
                     //   console.log(favJob.status)
                     if(favJob.status==="Applied"){
-                        count += 1
+                      countApplied += 1
+                    } else if (favJob.status==="Interviewed") {
+                      countInterviewed += 1
+                    } else if (favJob.status==="Offered") {
+                      countOffered += 1
+                    } else if (favJob.status==="Rejected") {
+                      countRejected += 1
+                    } else if (favJob.status==="Saved Not Applied") {
+                      countNotApplied += 1
                     }
                 })
-                this.setState({statusApplied: count})
-                console.log(this.state.statusApplied)
+                this.setState({
+                  statusApplied: countApplied,
+                  statusInterviewed: countInterviewed,
+                  statusOffered: countOffered,
+                  statusRejected: countRejected,
+                  statusNotApplied: countNotApplied
+                })
           })
           .catch(err=>console.log(err))
       }
     }
     render () {
       return (
-          <Container >
+          <div className="container-fluid list-group">
             <button onClick={this.handleRefresh}>Refresh</button>
-            <h3>Job Statistics</h3>
+            <h6>Job Statistics</h6>
             {
-             this.state.statusApplied>0?
-              <div>
-                <p>Applied Jobs: {this.state.statusApplied}</p>
+             this.state.favJobList.length>0?
+              <div classname="container">
+                <p className="job-status list-group-item">Not Applied: {this.state.statusNotApplied}</p>
+                <p className="job-status list-group-item">Applied: {this.state.statusApplied}</p>
+                <p className="job-status list-group-item">Interviewed: {this.state.statusInterviewed}</p>
+                <p className="job-status list-group-item">Offered: {this.state.statusOffered}</p>
+                <p className="job-status list-group-item">Rejected: {this.state.statusRejected}</p>
               </div>
               :
               <div>
               </div>
             }
             
-          </Container>
+          </div>
       )
     }
     

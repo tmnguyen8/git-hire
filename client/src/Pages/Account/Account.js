@@ -73,8 +73,6 @@ const JobAccount = () => {
         </div>
         
       </Row>
-      
-  
     )
 };
 
