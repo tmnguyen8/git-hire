@@ -3,7 +3,6 @@ const router = require("express").Router();
 const cheerio = require('cheerio');
 
 router.get("/glassdoor", (req, res) => {
-  console.log(req.query)
   axios
     .get(`https://www.glassdoor.com/Job/jobs.htm?suggestCount=0&suggestChosen=false&clickSource=searchBtn&typedKeyword=Software+Developer&sc.keyword=${req.query.title}&locT=&locId=&jobType=`)
     .then((response) => {

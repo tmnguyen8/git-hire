@@ -2,7 +2,6 @@ const axios = require("axios");
 const router = require("express").Router();
 const cheerio = require('cheerio');
 router.get("/monster", (req, res) => {
-  console.log(req.query)
   axios
     .get(`https://www.monster.com/jobs/search/?q=${req.query.title}&where=${req.query.location}`)
     .then((response) => {
