@@ -2,7 +2,7 @@ import React from "react";
 // import { Link, Redirect, NavLink } from 'react-router-dom'
 import GlobalContext from "../../Context/globalContext";
 // import Auth from "../../utils/Auth";
-import Nav from "../../components/Nav";
+// import Nav from "../../components/Nav";
 import Search from "../../components/Search";
 
 

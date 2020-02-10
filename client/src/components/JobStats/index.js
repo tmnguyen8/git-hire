@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import { Container, Row, Col } from "../../components/Grid";
+// import { Container, Row, Col } from "../../components/Grid";
 import "./style.css";
 import Button from "../Button";
 
