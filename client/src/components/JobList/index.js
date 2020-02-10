@@ -28,11 +28,20 @@ export function jobSaveButtonClick(svdJobData) {
   const localhostUser = JSON.parse(localStorage.getItem("user"))
 
   if (!isEmpty(localhostUser) && localhostUser!==null) {
-    API.postSavedJob(svdJobData)
-    .then(()=>{
-      alert(`Job ${svdJobData.title} is added to favorite`)
-    })
-    .catch(err=>console.log(err))
+
+    API.getSavedJobByID(localhostUser.username, svdJobData.id)
+      .then((res)=>{
+        if (res.data.id !== svdJobData.id) {
+          API.postSavedJob(svdJobData)
+          .then(()=>{
+            alert(`Job ${svdJobData.title} is added to favorite`)
+          })
+          .catch(err=>console.log(err))
+        } else {
+          alert("You have already saved this job!")
+        }
+      })
+      .catch(err=>console.log(err))
   } else {
     alert("Please login first to save job.")
   }

@@ -2,7 +2,6 @@ const axios = require("axios");
 const router = require("express").Router();
 const cheerio = require('cheerio');
 router.get("/simplyhired", (req, res) => {
-  console.log(req.query)
   axios
   .get(`https://www.simplyhired.com/search?q=${req.query.title}r&l=${req.query.location}`)
   .then(function(response) {

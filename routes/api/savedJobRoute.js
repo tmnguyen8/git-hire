@@ -45,6 +45,19 @@ router.put("/updatejob", (req,res)=>{
         .catch(err => res.status(422).json(err))
 });
 
+router.get("/savedJob", (req,res)=>{
+    db.SavedJobs
+        .findOne({ 
+            username: req.query.username, 
+            id: req.query.jobID
+        })
+        .then((resDB)=>{
+            console.log(resDB)
+            res.send(resDB)
+        })
+        .catch(err=>console.log(err))
+})
+
 
 
 module.exports = router;

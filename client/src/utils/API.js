@@ -52,12 +52,17 @@ export default {
     }})
   },
   updateJobStatus: function(favJobID, status) {
-    // console.log([favJobID, status])
     return axios.put("/api/updatejob", {params:{
       favJobID: favJobID,
       status: status
     }})
+  },
+  getSavedJobByID: function (username, jobID) {
+    return axios.get("api/savedJob", {params: {
+      username: username,
+      jobID: jobID
+    }})
   }
-
+  
 
 };
