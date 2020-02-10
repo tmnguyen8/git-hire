@@ -1,0 +1,83 @@
+body {
+    background-image: url("./components/images/imgonline-com-ua-TextureSeamless-FOt64HeDzB5Pyk.jpg");
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        max-width: 768px;
+    }
+    .thumbnail {
+        width: 100%;
+        max-width: 768px;
+    }
+    .list-group {
+        width: 100%;
+        max-width: 768px;
+        margin: none;
+    }
+    .navbar {
+        width: 100%;
+        /* max-width: 768px; */
+    }
+    row {
+        max-width: 768px;
+    }
+    .welcome-message {
+        font-size: xx-large;
+    }
+    .list-inline {
+        padding-left: 40%;
+    }
+}
+@media screen and (max-width: 425px) {
+    .container {
+        width: 100%;
+        max-width: 425px;
+    }
+    .thumbnail {
+        width: 100%;
+        max-width: 300px;
+    }
+    .list-group {
+        width: 100%;
+        max-width: 425px;
+        margin: none;
+    }
+    .navbar {
+        width: 100%;
+        /* max-width: 425px; */
+    }
+    row {
+        max-width: 425px;
+    }
+    .welcome-message {
+        font-size: xx-large;
+    }
+    .list-inline {
+        padding-left: 25%;
+    }
+}
+@media screen and (max-width: 375px) {
+    .container {
+        width: 100%;
+        max-width: 375px;
+    }
+    .thumbnail {
+        width: 100%;
+        max-width: 250px;
+    }
+    .list-group {
+        width: 100%;
+        max-width: 375px;
+        margin: none;
+        padding: none; 
+    }
+    .navbar {
+        width: 100%;
+        max-width: 375px;
+    }
+    row {
+        max-width: 375px;
+    }
+}

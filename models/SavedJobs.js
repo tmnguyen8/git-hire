@@ -29,6 +29,12 @@
      },
      username: {
          type: String
+     },
+     provider: {
+         type: String
+     },
+     status: {
+         type: String
      }
 
  })

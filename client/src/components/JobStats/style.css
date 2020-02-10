@@ -1,0 +1,28 @@
+.job-status {
+    font-size: 1.2vw;
+    text-decoration: none;
+    align-self: center;
+}
+
+.job-status-text {
+    text-align: center;
+}
+
+.refresh-btn {
+    align-self: center;
+}
+.napl{
+    color: black;
+}
+.apl{
+    color: navy;
+}
+.itv{
+    color: teal;
+}
+.ofr{
+    color: darkgreen;
+}
+.rjc {
+    color: darkred;
+}

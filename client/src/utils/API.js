@@ -40,6 +40,29 @@ export default {
   },
   postSavedJob: function(svdJobData){
     return axios.post("/api/savedJob", svdJobData)
+  },
+  getSavedJobByUser: function (username){
+    return axios.get("/api/savedJobByUser", {params:{
+      username: username
+    }})
+  },
+  removeSavedJob: function(favJobID){
+    return axios.delete("/api/savedJob" , {params:{
+      favJobID:favJobID
+    }})
+  },
+  updateJobStatus: function(favJobID, status) {
+    return axios.put("/api/updatejob", {params:{
+      favJobID: favJobID,
+      status: status
+    }})
+  },
+  getSavedJobByID: function (username, jobID) {
+    return axios.get("api/savedJob", {params: {
+      username: username,
+      jobID: jobID
+    }})
   }
+  
 
 };

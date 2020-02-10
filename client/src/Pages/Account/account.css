@@ -1,0 +1,140 @@
+@media screen and (max-width: 1024px) {
+    .user-image{
+        height: 75px;
+        width: 75px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        max-width: 768px;
+    }
+    .username-text{
+        font-size: 12px;
+    }
+    .user-image{
+        height: 75px;
+        width: 75px;
+    }
+    .card {
+        width: 100%;
+        max-width: 768px;
+        background-color: rgba(255, 255, 255, 0.856);
+    }
+    .card-container {
+        margin-left: 3%;
+    }
+    .job-status {
+        width: 100%;
+        max-width: 768px;
+        font-size: 10px;
+    }
+    .thumbnail {
+        width: 100%;
+        max-width: 768px;
+    }
+    .list-group {
+        width: 100%;
+        max-width: 768px;
+        margin: none;
+    }
+    .navbar {
+        width: 100%;
+        max-width: 768px;
+    }
+    div.row {
+        width:100%;
+        max-width: 768px;
+        margin: 0px;
+    }
+    .welcome-message {
+        font-size: xx-large;
+    }
+    .navbar-button {
+        align-self: right;
+    }
+    .accountinfo-header {
+        text-align: center;
+    }
+    .savedjobs-header{
+        text-align: center;
+    }
+    .job-stat-container{
+        padding: 7px;
+    }
+}
+@media screen and (max-width: 425px) {
+    .container {
+        width: 100%;
+        max-width: 425px;
+    }
+    .thumbnail {
+        width: 100%;
+        max-width: 300px;
+    }
+    .username-text{
+        font-size: 15px;
+    }
+    .card {
+        width: 100%;
+        max-width: 425px;
+        font-size: 20px;
+        background-color: rgba(255, 255, 255, 0.856);
+    }
+    .list-group {
+        width: 100%;
+        max-width: 425px;
+        margin: none;
+    }
+    .navbar {
+        width: 100%;
+        max-width: 425px;
+    }
+    div.row {
+        max-width: 425px;
+    }
+    .welcome-message {
+        font-size: x-large;
+    }
+    .list-inline {
+        padding-left: 25%;
+    }
+    .job-status {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 375px) {
+    .container {
+        width: 100%;
+        max-width: 375px;
+    }
+    .thumbnail {
+        width: 100%;
+        max-width: 250px;
+    }
+    .welcome-message {
+        font-size: large;
+    }
+    .card {
+        width: 100%;
+        max-width: 375px;
+        background-color: rgba(255, 255, 255, 0.856);
+    }
+    .list-group {
+        width: 100%;
+        max-width: 375px;
+        margin: none;
+        padding: none; 
+    }
+    .navbar {
+        width: 100%;
+        max-width: 375px;
+    }
+    div.row {
+        max-width: 375px;
+    }
+    .job-status {
+        font-size: 14px;
+    }
+}

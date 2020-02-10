@@ -4,7 +4,7 @@ import "./style.css";
 function Jumbotron() {
   return (
     <div className="jumbotron text-center">
-      <h1>Search for your next job</h1>
+      <h1 className= "jumbotron-message">Search for your next job</h1>
     </div>
   );
 }

@@ -1,0 +1,15 @@
+.carousel-inner img {
+    width: 75px;
+    height: 75px;
+    transition-duration: 1s;
+}
+.carousel-container {
+    /* background-color: rgba(158, 158, 158, 0.15); */
+    margin: 10px 100px;
+}
+
+.provider-title {
+    font-size: 2vw;
+    text-decoration: none;
+    color: black;
+}

@@ -1,0 +1,42 @@
+.list-group {
+    padding: 10px;
+    background-color: rgba(110, 110, 110, 0.5);
+    box-shadow: 0px 5px 20px rgb(20, 20, 20);
+    border-radius: 10px;
+    margin-top: 10%;
+    animation: fade-in-list 1s;
+}
+
+@keyframes fade-in-list {
+    0% {
+        opacity: 0%;
+    }
+    
+    100% {
+        opacity: 100%;
+    }
+}
+
+.list-group-item {
+    margin: 7px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.856);
+}
+
+.custom-button {
+    background: rgb(167, 167, 167);
+    animation: fade-in 5s
+}
+.custom-button:hover {
+    background: rgb(66, 66, 66);
+}
+.description-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100ch;
+}
+
+/* @media screen and (max-width: 600px) {
+
+} */

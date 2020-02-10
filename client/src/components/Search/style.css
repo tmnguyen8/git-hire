@@ -1,0 +1,10 @@
+.text-center {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+::placeholder {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.search-container {
+    margin-top: 50px;
+    text-align: center;
+}

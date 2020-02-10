@@ -1,12 +1,14 @@
 import React, { Component } from "react";
-import Jumbotron from "../Jumbotron";
-import Nav from "../Nav";
+// import Jumbotron from "../Jumbotron";
+// import Nav from "../Nav";
 import Input from "../Input";
 import Button from "../Button";
 import API from "../../utils/API";
 import { JobList, JobListItem } from "../JobList";
 import { Container, Row, Col } from "../Grid";
 import Checkbox from "../Checkbox"; 
+import "./style.css";
+import PartnerWheel from "../PartnerWheel";
 
 class Search extends Component {
   state = {
@@ -26,6 +28,8 @@ class Search extends Component {
 
   
   handleSearch = (event) =>{
+    this.setState({jobs: []})
+
     event.preventDefault();
     
     // GITHUB JOBS
@@ -75,8 +79,8 @@ class Search extends Component {
 
   render() {
     return (
-      <div>
-        <Checkbox/>        
+      <div className="search-container"> 
+        <PartnerWheel/>
         <Container>
           <Row>
             <Col size="md-12">
@@ -115,8 +119,9 @@ class Search extends Component {
           <Row >
             <div >
               <Col size="xs-12" >
+              {/* Beginning of Job List Display */}
               {!this.state.jobs.length ? (
-                <h1 className="text-center">No Jobs to Display</h1>
+                <div></div>
               ) : (
                 <JobList>
                   {this.state.jobs.map(job => {
@@ -125,13 +130,14 @@ class Search extends Component {
                         key={job.id}
                         id={job.id}
                         title={job.title}
-                        href={job.url}
+                        url={job.url}
                         company={job.company}
                         description={job.description}
                         thumbnail={job.company_logo}
                         location={job.location}
                         salary={job.salary}
                         provider={job.provider}
+                        company_logo={job.company_logo}
                       />
                     );
                   })}

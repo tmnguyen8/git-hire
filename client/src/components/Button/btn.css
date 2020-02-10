@@ -1,7 +1,14 @@
-.jobSearch {
+.custom-button {
     border-radius: 50px;
     max-width: 300px;
     text-align: center;
-
+    background: rgb(129, 128, 128);
+    color: rgb(40, 40, 40)
+}
+.custom-button:hover {
+    color: rgb(129, 129, 129);
 }
 
+Button {
+font-family: Georgia, 'Times New Roman', Times, serif;
+}
