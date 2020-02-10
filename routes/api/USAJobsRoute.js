@@ -9,7 +9,6 @@ var authKey = process.env.USAJOB_Key;
 
 router.get("/usajobs", (req, res) => {
   // console.log(req.query)
-
   axios
     .get(    
         `https://data.usajobs.gov/api/search?JobCategoryCode=2210&Keyword=${req.query.title}&LocationName=${req.query.location}`,      

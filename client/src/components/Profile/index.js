@@ -18,7 +18,7 @@ class Profile extends Component {
     render() {
 
         const userInfo = JSON.parse(localStorage.getItem('user'))
-        console.log(userInfo.username)
+        // console.log(userInfo.username)
 
         if(this.isEmpty(userInfo)) {
             return(
