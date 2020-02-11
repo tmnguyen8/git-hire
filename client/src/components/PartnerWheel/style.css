@@ -1,7 +1,7 @@
 .carousel-inner img {
     width: 75px;
     height: 75px;
-    transition-duration: 1s;
+    transition-duration: 1ms;
 }
 .carousel-container {
     /* background-color: rgba(158, 158, 158, 0.15); */

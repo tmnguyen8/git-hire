@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import API from "../../utils/API";
 import GlobalContext from "../../Context/globalContext";
-import { JobList, JobListItem } from "../../components/JobList";
-import { Container, Row, Col } from "../../components/Grid";
+// import { JobList, JobListItem } from "../../components/JobList";
+import { Row, Col } from "../../components/Grid";
 import Profile from "../../components/Profile";
 import { FavListItem, FavList } from "../../components/FavList";
 import JobStats from "../../components/JobStats";
