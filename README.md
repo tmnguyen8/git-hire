@@ -62,4 +62,5 @@ npm install
 1. The user has the functionality to search for jobs based on title and location. The user can save the jobs and manage their status.
 
     [User Page](https://git-hire.herokuapp.com/)
-    [![Alt text](https://img.youtube.com/vi/QGodbRNV_AE/0.jpg)](https://www.youtube.com/watch?v=QGodbRNV_AE)
+    
+[![Alt text](https://img.youtube.com/vi/QGodbRNV_AE/0.jpg)](https://www.youtube.com/watch?v=QGodbRNV_AE)
